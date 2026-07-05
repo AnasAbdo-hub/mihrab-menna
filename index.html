@@ -145,7 +145,7 @@
             transform: scale(1.15);
         }
         .tasbeeh-checkbox:checked::after {
-            content: '♥';
+            content: '✓';
             color: #FFF9F8;
             font-size: 14px;
         }
@@ -211,7 +211,7 @@
             <h1 class="font-serif text-3xl md:text-5xl text-burgundy font-bold mb-4 tracking-wide">مِحراب البهجة والارتِقاء المَعرفي</h1>
             
             <p class="text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
-                مساحتنا الهادئة لتوثيق السعي الجميل، وتدبر النعم البسيطة، والارتقاء بالنفس يوماً بعد يوم بكل حب.
+                مساحتنا الهادئة لتوثيق السعي الجميل، وتدبر النعم البسيطة، والارتقاء بالنفس يوماً بعد يوم بكل عزم وتوفيق.
             </p>
 
             <!-- Premium Quote Callout with Elegant Link -->
@@ -222,7 +222,7 @@
                 </p>
                 <div class="h-[1px] w-1/3 bg-roseGold-soft mx-auto my-3"></div>
                 <p class="text-xs text-roseGold-dark leading-relaxed font-sans">
-                    لذا يا منة الله، رتبنا خطتنا <span class="font-bold">"سنة سنة"</span>.. لا ليكون واجباً ثقيلاً، بل عروجاً وصعوداً عذباً نحو معالي السعادة والبركة والنجاح الدائمين معًا. 🌸✨
+                    لذا يا منة الله، رتبنا خطتنا <span class="font-bold">"سنة سنة"</span>.. لا ليكون واجباً ثقيلاً، بل عروجاً وصعوداً عذباً نحو معالي السعادة والبركة والنجاح الدائمين معًا في الدنيا والآخرة. 🌸✨
                 </p>
             </div>
 
@@ -302,12 +302,12 @@
 
             <!-- DYNAMIC CHALLENGE FROM ANAS -->
             <div id="anasChallengeBox" class="hidden bg-gradient-to-r from-blush-light to-white border-2 border-roseGold p-5 rounded-2xl shadow-sm relative">
-                <span class="absolute -top-3 right-5 bg-burgundy text-white px-3 py-0.5 rounded-full text-[10px] font-bold">مهمة حب خاصة من شريك سعيكِ 💌</span>
+                <span class="absolute -top-3 right-5 bg-burgundy text-white px-3 py-0.5 rounded-full text-[10px] font-bold">مهمة دعم وتشجيع من شريك السعي 🤝</span>
                 <div class="flex items-start gap-4 mt-2">
                     <input type="checkbox" id="challenge_task" class="custom-checkbox task-check mt-1">
                     <div>
                         <label for="challenge_task" id="challenge_text" class="font-bold text-burgundy cursor-pointer text-sm"></label>
-                        <p class="text-xs text-gray-500 mt-1">مهمة عذبة مضافة ليومكِ الاستثنائي.</p>
+                        <p class="text-xs text-gray-500 mt-1">مهمة مضافة لبرنامجكِ اليومي لمزيد من الأثر والبركة المشتركة.</p>
                     </div>
                 </div>
             </div>
@@ -460,7 +460,7 @@
                         </div>
                         <div class="mt-3 pt-3 border-t border-gray-100">
                             <span class="text-xs text-roseGold-dark font-bold">✨ إيه اللي عملتيه اليوم من الرياضة؟</span>
-                            <textarea id="sport_minimal_details" rows="2" placeholder="عملتي إيه اليوم؟ صعود السلم متواصل من أوله لآخره ٣ مرات الصبح و ٣ بالليل، تمشية سريعة على السطح مع حد من البنات وأنتم بترغوا 🤗..." class="mt-2 w-full bg-roseGold-light/10 rounded-lg p-2.5 text-xs focus:outline-none border border-roseGold-soft focus:border-roseGold"></textarea>
+                            <textarea id="sport_minimal_details" rows="2" placeholder="عملتي إيه اليوم؟ صعود السلم متواصل، تمشية سريعة على السطح مع حد من البنات وأنتم بترغوا 🤗..." class="mt-2 w-full bg-roseGold-light/10 rounded-lg p-2.5 text-xs focus:outline-none border border-roseGold-soft focus:border-roseGold"></textarea>
                         </div>
                     </div>
                 </div>
@@ -510,7 +510,7 @@
                 <div class="bg-white p-6 rounded-2xl border border-roseGold-soft/40 shadow-sm">
                     <h4 class="font-serif text-md font-bold text-burgundy mb-4 flex items-center justify-between">
                         <span>🌸 الأذكار القصيرة (١٠٠ مرة لكل منها)</span>
-                        <span class="text-xs text-roseGold-dark">اضغطي لوضع إشارة حب عند الانتهاء</span>
+                        <span class="text-xs text-roseGold-dark">اضغطي لتأكيد الانتهاء</span>
                     </h4>
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
@@ -725,8 +725,12 @@
                     </div>
                 </div>
 
+                <!-- WEEKLY MEJLIS (Excluded from Daily Progress calculation) -->
                 <div class="luxury-card p-6 rounded-2xl space-y-4 bg-blush-superlight/40">
-                    <h4 class="font-serif text-md font-bold text-burgundy">🗓️ المجالس الأسبوعية</h4>
+                    <h4 class="font-serif text-md font-bold text-burgundy flex items-center justify-between">
+                        <span>🗓️ المجالس الأسبوعية</span>
+                        <span class="text-[10px] text-roseGold-dark px-2.5 py-1 bg-roseGold-light/60 rounded-full font-bold">لا تؤثر على النسبة المئوية لليوم 🕊️</span>
+                    </h4>
                     <div class="grid grid-cols-1 gap-4">
                         <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30">
                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b pb-2 mb-3">
@@ -767,7 +771,7 @@
                                 </div>
                             </label>
                             <div class="mt-3">
-                                <span class="text-[11px] text-roseGold-dark font-bold">🎯 وصلتي لفين في الحفظ اليوم وهل راجعتي من أول المتن؟</span>
+                                <span class="text-[11px] text-roseGold-dark font-bold">🎯 وصلتي لفين في الحفظ اليوم وهل راجعتي من أول المتن?</span>
                                 <textarea id="shatibiya_progress_notes" rows="2" placeholder="اكتبي نطاق الأبيات التي تم حفظها ومراجعتها..." class="w-full bg-white rounded-xl p-2.5 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all placeholder-gray-400 mt-1"></textarea>
                             </div>
                         </div>
@@ -809,9 +813,9 @@
                 <div class="bg-gradient-to-r from-blush-light to-roseGold-light/30 rounded-3xl p-6 border-2 border-roseGold text-center relative overflow-hidden shadow-md">
                     <div class="absolute -bottom-8 -left-8 text-roseGold opacity-10"><i class="fa-solid fa-envelope-open-text text-9xl"></i></div>
                     <span class="text-2xl block mb-2">💌</span>
-                    <h4 class="font-serif text-xl text-burgundy mb-2">رسالة اليوم المخبأة لكِ خصيصاً</h4>
-                    <p id="closedMessageLabel" class="text-xs text-roseGold-dark mb-4">اضغطي لفتح المغلف الورقي وقراءة الهمسة الدافئة...</p>
-                    <button type="button" onclick="revealSecretMessage()" id="revealBtn" class="bg-burgundy hover:bg-roseGold-dark text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none">افتحي المغلف برفق ♥</button>
+                    <h4 class="font-serif text-xl text-burgundy mb-2">دعاء ورسالة اليوم الراقية</h4>
+                    <p id="closedMessageLabel" class="text-xs text-roseGold-dark mb-4">اضغطي لفتح المغلف الورقي وقراءة الهمسة التشجيعية المخصصة...</p>
+                    <button type="button" onclick="revealSecretMessage()" id="revealBtn" class="bg-burgundy hover:bg-roseGold-dark text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none">افتحي المغلف برفق 🌸</button>
                     <div id="secretMessageContainer" class="hidden mt-4 pt-4 border-t border-roseGold-soft/50">
                         <p id="secretText" class="font-serif italic text-burgundy text-md leading-relaxed"></p>
                     </div>
@@ -829,7 +833,7 @@
             <div class="pt-6 border-t border-roseGold-soft/30 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <button type="button" onclick="triggerReset()" class="text-xs text-gray-400 hover:text-burgundy transition-all">إفراغ حقول اليوم الحالي</button>
                 <div class="flex gap-2 w-full sm:w-auto">
-                    <button type="button" onclick="copyReport()" class="flex-1 sm:flex-none bg-roseGold-dark hover:bg-roseGold-warm text-white px-6 py-3 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none flex items-center justify-center gap-2"><span>📋</span> نسخ تقرير اليوم الدافئ لإرساله</button>
+                    <button type="button" onclick="copyReport()" class="flex-1 sm:flex-none bg-roseGold-dark hover:bg-roseGold-warm text-white px-6 py-3 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none flex items-center justify-center gap-2"><span>📋</span> نسخ تقرير اليوم لإرساله بكل فخر</button>
                 </div>
             </div>
         </form>
@@ -841,12 +845,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-bold text-burgundy mb-1">💌 رسالة اليوم المخبأة الخاصة بـ (<span class="adminDateLabel"></span>):</label>
-                    <textarea id="admin_custom_message" rows="4" placeholder="اكتب هنا همسة الحب أو الدعاء الاستثنائي الذي سيظهر لها عند فتح المغلف اليوم..." class="w-full bg-roseGold-light/30 rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all"></textarea>
+                    <label class="block text-xs font-bold text-burgundy mb-1">💌 الكلمات التشجيعية والدعاء الخاص بـ (<span class="adminDateLabel"></span>):</label>
+                    <textarea id="admin_custom_message" rows="4" placeholder="اكتب هنا الدعاء الاستثنائي أو الكلمات التشجيعية الراقية التي ستظهر لها عند فتح المغلف اليوم..." class="w-full bg-roseGold-light/30 rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all"></textarea>
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-burgundy mb-1">⚡ مهمة خاصة إضافية لليوم فقط:</label>
-                    <input type="text" id="admin_challenge_input" placeholder="مثال: نعد شاي بنعناع سوا ونسمع تلاوة..." class="w-full bg-roseGold-light/30 rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all"></textarea>
+                    <label class="block text-xs font-bold text-burgundy mb-1">⚡ مهمة تشجيعية ودعم مقترحة لليوم فقط:</label>
+                    <input type="text" id="admin_challenge_input" placeholder="مثال: مراجعة آداب حفظ القرآن معاً أو دعاء متبادل..." class="w-full bg-roseGold-light/30 rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all"></textarea>
                 </div>
                 <button onclick="saveAdminSettings()" class="w-full bg-burgundy text-white py-3 rounded-full text-xs font-bold hover:bg-black transition-all">حفظ وإرسال التعديل سحابياً ✨</button>
             </div>
@@ -1176,7 +1180,7 @@
                     { id: 'read_evening_talk', label: 'حديث المساء الترويحي ☕' },
                     { id: 'sport_minimal', label: 'الرياضة اليومية (أقل القليل) 👟' },
                     { id: 'halal_recreation', label: 'مكافأة الترويح الحلال 🎈' },
-                    { id: 'challenge_task', label: 'المهمة الخاصة المرسلة منك 💌' }
+                    { id: 'challenge_task', label: 'المهمة المشتركة المقترحة اليوم 🤝' }
                 ],
                 "النادي الروحي والخلوات 📿": [
                     { id: 'dhikr_companion', label: 'الذكر الملازم طوال اليوم 🌟' },
@@ -1249,6 +1253,10 @@
         function updateTrackerVisuals() {
             const checkboxes = document.querySelectorAll('.task-check');
             let visibleCheckboxes = Array.from(checkboxes);
+            
+            // CRITICAL MODIFICATION: Exclude weekly majalis tasks (which start with 'weekly_') from daily percentage progress!
+            visibleCheckboxes = visibleCheckboxes.filter(cb => !cb.id.startsWith('weekly_'));
+            
             if (document.getElementById('anasChallengeBox').classList.contains('hidden')) {
                 visibleCheckboxes = visibleCheckboxes.filter(cb => cb.id !== 'challenge_task');
             }
@@ -1312,7 +1320,7 @@
             const mood = document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️';
             const progress = document.getElementById('progressText').innerText;
             
-            let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي:* ${progress}\n\n`;
+            let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي لليوم:* ${progress}\n\n`;
             
             report += `🌿 *كشف الملاحظات والتدوينات الروحية والعلمية:*\n`;
             report += `  • *الورد القرآني المنجز:* ${document.getElementById('q_quran_progress').value || 'لم يتم التدوين اليوم'}\n`;
@@ -1332,11 +1340,11 @@
 
             let checkedItems = [];
             const schemaNames = {
-                'q_prayers': 'الصلوات الخمس والسنن الرواتب🕌', 'q_fajr': 'ركعتا الفجر (السنة)🌅', 'q_azkar': 'أذكار الصباح والمساء☀️', 'q_duha': 'ركعتا الضحى🌤️', 'q_quran': 'الورد القرآني والتدبر📖', 'q_witr': 'ركعة الوتر الشافية🌌',
-                'read_booklets': 'مراجعة سلسلة الكتيبات📚', 'read_evening_talk': 'حديث المساء الترويحي☕', 'sport_minimal': 'الرياضة اليومية (أقل القليل)👟', 'halal_recreation': 'الترويح الحلال والبهجة🎈',
-                'challenge_task': 'المهمة المضافة منك اليوم💌', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
-                'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'weekly_jazaa_1': 'الجزاء التربوي (ح١)🌱', 'weekly_jazaa_2': 'الجزاء التربوي (ح٢)🌱',
-                'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
+                'q_prayers': 'الصلوات الخمس والسنن الرواتب 🕌', 'q_fajr': 'ركعتا الفجر (السنة) 🌅', 'q_azkar': 'أذكار الصباح والمساء ☀️', 'q_duha': 'ركعتا الضحى 🌤️', 'q_quran': 'الورد القرآني والتدبر 📖', 'q_witr': 'ركعة الوتر الشافية 🌌',
+                'read_booklets': 'مراجعة سلسلة الكتيبات 📚', 'read_evening_talk': 'حديث المساء الترويحي ☕', 'sport_minimal': 'الرياضة اليومية (أقل القليل) 👟', 'halal_recreation': 'الترويح الحلال والبهجة 🎈',
+                'challenge_task': 'مهمة التشجيع والدعم المقترحة اليوم 🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم 🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم ❤️', 'neutrality_done': 'خلوة المحايدة النفسية 🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب 🤲',
+                'sc_ward': 'سلسلة طاقة ورد 🌹', 'sc_ashza': 'أشذاء وأنداء للكملي 🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد 🌍', 'weekly_jazaa_1': 'الجزاء التربوي (ح١) 🌱', 'weekly_jazaa_2': 'الجزاء التربوي (ح٢) 🌱',
+                'metn_shatibiya': 'حفظ الشاطبية واستظهارها 📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره 📐', 'metn_others': 'مراجعة المتون الأخرى 📐',
                 'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
             };
 
@@ -1348,7 +1356,7 @@
                 report += `✅ *المهام والأوراد والعبادات المنجزة:* \n  • ` + checkedItems.join('\n  • ') + `\n\n`;
             }
             
-            report += `🤝 *سنة سنة.. نبني عروجنا بهدوء وحب متواصل.* ♥`;
+            report += `🤝 *سنة سنة.. نبني عروجنا بهدوء وتوفيق متكامل.* 🌸`;
 
             const el = document.createElement('textarea'); el.value = report; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el);
             showToast('تم نسخ التقرير التفصيلي الكامل بنجاح ومستعد للإرسال! 🌸');
