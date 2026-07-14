@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -264,17 +263,16 @@
         <form id="trackerForm" class="p-6 md:p-10 space-y-10" oninput="triggerAutoSave()">
             
             <!-- INTENTIONS CHECKPOINT -->
-            <div class="luxury-card rounded-[2rem] p-6 border-2 border-dashed border-roseGold-soft/80 relative overflow-hidden bg-roseGold-light/20 shadow-sm">
-                <div class="absolute -top-6 -left-6 text-roseGold-soft opacity-30 text-6xl"><i class="fa-solid fa-heart"></i></div>
-                <h3 class="font-serif text-lg md:text-xl text-burgundy mb-3 flex items-center gap-3">
-                    <span class="text-2xl">🎯</span> نياتكِ وأنتِ تملئين المِحراب الآن؟
-                </h3>
-                <div class="space-y-3">
-                    <label class="flex items-center gap-3 cursor-pointer">
-                        <input type="checkbox" id="init_intentions" class="custom-checkbox task-check">
-                        <span class="text-xs md:text-sm font-bold text-burgundy leading-relaxed">أستحضر نياتي العليّة لجعل هذا السعي والتوثيق عبادة هادفة وطاعة لربنا 🤲</span>
-                    </label>
-                    <textarea id="init_intentions_text" rows="2" placeholder="دوني نية مستحرة في قلبكِ اليوم (تقرباً لله، استثماراً للوقت، طلباً للعلم النافع والبركة، إسعاداً لنفسك ولمن تحبين...)" class="w-full bg-white rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all placeholder-gray-400 shadow-inner"></textarea>
+            <div class="luxury-card rounded-[2rem] p-5 border-2 border-dashed border-roseGold-soft/80 relative overflow-hidden bg-roseGold-light/10 shadow-sm">
+                <div class="absolute -top-6 -left-6 text-roseGold-soft opacity-20 text-6xl"><i class="fa-solid fa-heart"></i></div>
+                <div class="flex items-start gap-4">
+                    <input type="checkbox" id="init_intentions" class="custom-checkbox task-check mt-1">
+                    <div>
+                        <label for="init_intentions" class="font-bold text-burgundy cursor-pointer text-sm md:text-base leading-relaxed flex items-center gap-2">
+                            <span>🎯</span> استحضار نيّات المحراب
+                        </label>
+                        <p class="text-xs text-gray-500 mt-1">أستحضر نياتي العليّة بقلبي الآن ليصير ملء هذا المحراب كله طاعة وعبادة وسعياً مباركاً يُرتجى ثوابه وبركته.</p>
+                    </div>
                 </div>
             </div>
 
@@ -410,7 +408,7 @@
                             </div>
                         </div>
                         <div class="mt-3">
-                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم؟</span>
+                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم?</span>
                             <textarea id="q_quran_progress" rows="2" placeholder="اكتبي السورة والآيات التي تم سماعها وتدبرها اليوم..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold"></textarea>
                         </div>
                     </div>
@@ -813,86 +811,6 @@
                 </div>
             </div>
 
-            <!-- SECTION 5: MEMORY ACTIVATION COURSE (SPECIAL THEME) -->
-            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-slate-100 rounded-[2.5rem] p-6 md:p-8 border-2 border-gold/75 shadow-2xl relative overflow-hidden">
-                <!-- Background decorative brains and gold accents -->
-                <div class="absolute -top-12 -left-12 text-gold/10 text-9xl pointer-events-none"><i class="fa-solid fa-brain"></i></div>
-                <div class="absolute -bottom-8 -right-8 text-gold/5 text-8xl pointer-events-none"><i class="fa-solid fa-graduation-cap"></i></div>
-
-                <div class="flex items-center gap-3 border-b border-gold/30 pb-4 mb-6">
-                    <span class="text-3xl text-gold-light">🧠</span>
-                    <div>
-                        <h3 class="font-serif text-xl md:text-2xl text-gold-light font-bold flex items-center gap-2">جناح دورة تنشيط الذاكرة والارتقاء الإدراكي</h3>
-                        <p class="text-xs text-roseGold-soft/80 mt-0.5">المساحة المخصصة لبناء ملكات الحفظ السريع واستثمار العقل المبارك.</p>
-                    </div>
-                </div>
-
-                <!-- Course Target Motivator Badge -->
-                <div class="bg-white/5 border border-gold/20 p-4 rounded-2xl text-center mb-6 relative">
-                    <span class="absolute -top-3 right-6 bg-gold text-slate-950 px-3 py-0.5 rounded-full text-[9px] font-bold">الهدف المأمول والوعد 🎯</span>
-                    <p class="text-sm font-bold text-gold-light">
-                        حفظ الصفحة كاملة في ٥ دقائق بدلاً من ٣٠ دقيقة! ⚡
-                    </p>
-                    <p class="text-[11px] text-gray-300 mt-1 leading-relaxed">
-                        "هذا الهدف العظيم مجرّب وبإذن الله ستصلين إليه بكل يسر وعذوبة حين يتم الالتزام التام بالتكليفات والتمارين المنهجية."
-                    </p>
-                </div>
-
-                <div class="space-y-6">
-                    <!-- Session Attendance (Radios - exclusive selection) -->
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                            <span class="text-xs font-bold text-gold-light block">🌅 حضور المجلس التعليمي:</span>
-                            <p class="text-[11px] text-gray-300">اختاري المجلس الذي تم حضوره والتفاعل معه اليوم (خيار فردي، والرمز ينتقل تلقائياً).</p>
-                        </div>
-                        <div class="flex items-center gap-3 w-full sm:w-auto">
-                            <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs">
-                                <input type="radio" name="memory_session" value="الصباح 🌅" class="accent-gold h-4 w-4">
-                                <span>مجلس الصباح 🌅</span>
-                            </label>
-                            <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs">
-                                <input type="radio" name="memory_session" value="المساء 🌌" class="accent-gold h-4 w-4">
-                                <span>مجلس المساء 🌌</span>
-                            </label>
-                            <button type="button" onclick="clearMemorySessionRadio()" class="text-[10px] text-gray-400 hover:text-white transition-all underline">تراجع</button>
-                        </div>
-                    </div>
-
-                    <!-- Coach Guidance Interaction -->
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex items-start gap-4">
-                        <input type="checkbox" id="memory_interaction" class="custom-checkbox task-check mt-1">
-                        <div>
-                            <label for="memory_interaction" class="text-sm font-bold text-gold-light cursor-pointer">تم التفاعل بوعي تام مع توجيهات المدرب خلال الحلقة؟ 🎯</label>
-                            <p class="text-xs text-gray-300 mt-0.5">الحرص على اليقظة الكاملة ومتابعة المدرب خطوة بخطوة.</p>
-                        </div>
-                    </div>
-
-                    <!-- Exercises & Assignments Text inputs -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                            <span class="text-xs font-bold text-gold-light block">🏋️‍♂️ تمرينات اليوم التي تمت في الحلقة:</span>
-                            <textarea id="memory_exercises_text" rows="3" placeholder="دوني التمارين الذهنية التي طبقتموها اليوم خلال الحلقة..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
-                        </div>
-                        <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs font-bold text-gold-light block">📝 تكليف الحلقة المطلوب:</span>
-                                <textarea id="memory_assignment_text" rows="2" placeholder="اكتبي التكليف والواجب الذي أقرّه المدرب للتدرب عليه..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
-                            </div>
-                            <div class="mt-3 flex items-center gap-3 bg-slate-950/30 p-2.5 rounded-lg border border-white/5">
-                                <input type="checkbox" id="memory_assignment_done" class="custom-checkbox task-check">
-                                <label for="memory_assignment_done" class="text-xs font-bold text-gold-light cursor-pointer">تم الانتهاء من أداء التكليف بالكامل؟ ✅</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Honest Progress Evaluation -->
-                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
-                        <span class="text-xs font-bold text-gold-light block">💭 رأيك بصراحة في التمارين والتكليف، هل تشعرين بتقدم حقيقي في الحفظ والسرعة؟</span>
-                        <textarea id="memory_feedback_text" rows="3" placeholder="دوني انطباعك وخطوات التقدم في الحفظ، وكم استغرقتِ في حفظ وجه القرآن اليوم مقارنة بالأمس..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
-                    </div>
-                </div>
-            </div>
-
             <!-- MYSTERY ENVELOPE -->
             <div class="divider">
                 <i class="fa-solid fa-envelope-open-text"></i>
@@ -947,7 +865,6 @@
                 <h4 class="font-bold text-sm text-burgundy border-b border-roseGold-soft pb-2">👁️ مراقبة سعي منة الحالي:</h4>
                 <div class="space-y-2 text-xs">
                     <p><strong>🕊️ نبض قلبها اليوم:</strong> <span id="view_mood" class="font-bold text-burgundy">-</span></p>
-                    <p><strong>📖 استهلال النوايا:</strong> <span id="view_intentions" class="italic text-gray-700">-</span></p>
                     <p><strong>📖 تدوين رقائق القرآن:</strong> <span id="view_raqaiq" class="italic text-gray-700">-</span></p>
                     <p><strong>🧘‍♀️ خلوة المحايدة:</strong> <span id="view_neutrality" class="italic text-gray-700">-</span></p>
                     <p><strong>🤲 بث ونجوى:</strong> <span id="view_duaa" class="italic text-gray-700">-</span></p>
@@ -962,10 +879,6 @@
             
             <!-- Beautiful text blocks for reflections mirror -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
-                    <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">🎯 نيات منة المستحضرة اليوم:</span>
-                    <p id="mirror_init_intentions_notes" class="text-xs italic text-gray-700">-</p>
-                </div>
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📖 الورد القرآني والتدبر:</span>
                     <p id="mirror_quran_progress" class="text-xs italic text-gray-700">-</p>
@@ -997,14 +910,6 @@
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📖 تساؤلات ومذاكرة أعذب المناهل:</span>
                     <p id="mirror_manahil_notes" class="text-xs italic text-gray-700">-</p>
-                </div>
-                <!-- Memory Activation Course Mirror Info -->
-                <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-200 md:col-span-2 space-y-2">
-                    <span class="text-xs font-bold text-indigo-950 block border-b pb-1 mb-2">🧠 متابعة دورة تنشيط الذاكرة:</span>
-                    <p><strong>حضور المجلس:</strong> <span id="mirror_memory_session" class="text-xs italic text-gray-700">-</span></p>
-                    <p><strong>التمارين التي تم تطبيقها:</strong> <span id="mirror_memory_exercises" class="text-xs italic text-gray-700">-</span></p>
-                    <p><strong>تكليف الحلقة المطلوب:</strong> <span id="mirror_memory_assignment" class="text-xs italic text-gray-700">-</span></p>
-                    <p><strong>رأيها وتقدم مستواها في الحفظ:</strong> <span id="mirror_memory_feedback" class="text-xs italic text-gray-700">-</span></p>
                 </div>
             </div>
 
@@ -1161,8 +1066,7 @@
             document.getElementById('duaa_notes').value = data.duaaNotes || '';
             document.getElementById('benefit_sharing_notes').value = data.benefitSharingNotes || '';
             
-            // New/Updated text fields safely loaded
-            document.getElementById('init_intentions_text').value = data.initIntentionsText || '';
+            // Text fields safely loaded
             document.getElementById('dhikr_companion_text').value = data.dhikrCompanionText || '';
             document.getElementById('q_quran_progress').value = data.quranProgress || '';
             document.getElementById('read_sawa_kawa_progress').value = data.sawaKawaProgress || '';
@@ -1172,27 +1076,14 @@
             document.getElementById('shatibiya_progress_notes').value = data.shatibiyaProgressNotes || '';
             document.getElementById('manahil_questions_notes').value = data.manahilQuestionsNotes || '';
 
-            // Loading Memory course fields
-            if (data.memorySession) {
-                const radio = document.querySelector(`input[name="memory_session"][value="${data.memorySession}"]`);
-                if (radio) radio.checked = true;
-            } else {
-                document.querySelectorAll('input[name="memory_session"]').forEach(r => r.checked = false);
-            }
-            document.getElementById('memory_exercises_text').value = data.memoryExercisesText || '';
-            document.getElementById('memory_assignment_text').value = data.memoryAssignmentText || '';
-            document.getElementById('memory_feedback_text').value = data.memoryFeedbackText || '';
-
             // Update basic text summaries for Anas Control Room
             document.getElementById('view_mood').innerText = data.mood || '-';
-            document.getElementById('view_intentions').innerText = data.initIntentionsText || '-';
             document.getElementById('view_raqaiq').innerText = data.raqaiqNote || '-';
             document.getElementById('view_neutrality').innerText = data.neutralityNotes || '-';
             document.getElementById('view_duaa').innerText = data.duaaNotes || '-';
             document.getElementById('view_benefit').innerText = data.benefitSharingNotes || '-';
 
             // Mirror Reflections/Text Fields to Admin Room
-            document.getElementById('mirror_init_intentions_notes').innerText = data.initIntentionsText || 'لم يتم استهلال النوايا بعد اليوم';
             document.getElementById('mirror_monajid_notes').innerText = data.monajidBenefitNotes || 'لا يوجد تدوينات حالياً';
             document.getElementById('mirror_jazaa_notes').innerText = data.jazaaSegmentedNotes || 'لا يوجد تدوينات حالياً';
             document.getElementById('mirror_shatibiya_notes').innerText = data.shatibiyaProgressNotes || 'لا يوجد تدوينات حالياً';
@@ -1202,12 +1093,6 @@
             document.getElementById('mirror_quran_progress').innerText = data.quranProgress || 'لم يتم البدء اليوم';
             document.getElementById('mirror_sawa_kawa_progress').innerText = data.sawaKawaProgress || 'لم يتم البدء اليوم';
             document.getElementById('mirror_sport_details').innerText = data.sportMinimalDetails || 'لم يتم البدء اليوم';
-
-            // Memory course mirroring
-            document.getElementById('mirror_memory_session').innerText = data.memorySession || 'لم يتم الحضور اليوم';
-            document.getElementById('mirror_memory_exercises').innerText = data.memoryExercisesText || 'لا يوجد تدوين للتمرينات';
-            document.getElementById('mirror_memory_assignment').innerText = data.memoryAssignmentText || 'لا يوجد تدوين للتكليف';
-            document.getElementById('mirror_memory_feedback').innerText = data.memoryFeedbackText || 'لا يوجد تقييم لتقدم الحفظ حالياً';
 
             // Generate Full Scale Live Checklist Mirror for Anas
             renderAdminChecklistMirror(data.tasks || {});
@@ -1234,7 +1119,6 @@
                     benefitSharingNotes: document.getElementById('benefit_sharing_notes').value,
                     
                     // Text fields saved safely
-                    initIntentionsText: document.getElementById('init_intentions_text').value,
                     dhikrCompanionText: document.getElementById('dhikr_companion_text').value,
                     quranProgress: document.getElementById('q_quran_progress').value,
                     sawaKawaProgress: document.getElementById('read_sawa_kawa_progress').value,
@@ -1243,12 +1127,6 @@
                     jazaaSegmentedNotes: document.getElementById('jazaa_segmented_notes').value,
                     shatibiyaProgressNotes: document.getElementById('shatibiya_progress_notes').value,
                     manahilQuestionsNotes: document.getElementById('manahil_questions_notes').value,
-
-                    // Memory course fields saved
-                    memorySession: document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : '',
-                    memoryExercisesText: document.getElementById('memory_exercises_text').value,
-                    memoryAssignmentText: document.getElementById('memory_assignment_text').value,
-                    memoryFeedbackText: document.getElementById('memory_feedback_text').value,
                     
                     tasks: tasksObj
                 };
@@ -1284,11 +1162,6 @@
             container.classList.remove('hidden'); document.getElementById('revealBtn').classList.add('hidden'); document.getElementById('closedMessageLabel').classList.add('hidden');
         };
 
-        window.clearMemorySessionRadio = function() {
-            document.querySelectorAll('input[name="memory_session"]').forEach(radio => radio.checked = false);
-            window.triggerAutoSave();
-        };
-
         function renderAdminChecklistMirror(tasks) {
             const mirrorContainer = document.getElementById('admin_full_checklist_mirror');
             if(!mirrorContainer) return;
@@ -1303,11 +1176,7 @@
                     { id: 'q_duha', label: 'ركعتا الضحى المباركة 🌤️' },
                     { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك والكافرون 🌌' },
                     { id: 'q_quran', label: 'الورد القرآني والتدبر 📖' },
-                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
-                ],
-                "جناح تنشيط الذاكرة والارتقاء 🧠": [
-                    { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
-                    { id: 'memory_assignment_done', label: 'الانتهاء التام من أداء التكليف ✅' }
+                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌃' }
                 ],
                 "القراءة والترويح وتقدير الجسد 🌸": [
                     { id: 'read_raqaiq', label: 'قراءة فصل رقائق القرآن (مهمة الفهرس) 📖' },
@@ -1449,12 +1318,10 @@
             const dateStr = new Date(window.selectedDate).toLocaleDateString('ar-EG', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             const mood = document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️';
             const progress = document.getElementById('progressText').innerText;
-            const selectedSession = document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : 'لم يتم الحضور اليوم';
             
             let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي اليومي:* ${progress}\n\n`;
             
             report += `🌿 *كشف الملاحظات والتدوينات الروحية والعلمية:*\n`;
-            report += `  • *استهلال نيات اليوم:* ${document.getElementById('init_intentions_text').value || 'تم استحضار النية بالقلب'}\n`;
             report += `  • *الذكر الملازم اليومي المختار:* ${document.getElementById('dhikr_companion_text').value || 'لم يتم التدوين'}\n`;
             report += `  • *الورد القرآني المنجز:* ${document.getElementById('q_quran_progress').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *تدوين رقائق القرآن (الفهرس):* ${document.getElementById('raqaiq_note').value || 'لم يتم التدوين اليوم'}\n`;
@@ -1469,12 +1336,6 @@
             report += `  • *مذاكرة وتساؤلات أعذب المناهل:* ${document.getElementById('manahil_questions_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *الفوائد والأسئلة العامة:* ${document.getElementById('benefit_sharing_notes').value || 'لا يوجد ملحوظات اليوم'}\n\n`;
 
-            report += `🧠 *جناح دورة تنشيط الذاكرة:* \n`;
-            report += `  • *حضور المجلس:* ${selectedSession}\n`;
-            report += `  • *تمرينات الحلقة اليومية:* ${document.getElementById('memory_exercises_text').value || 'لا يوجد تمرينات مدونة'}\n`;
-            report += `  • *تكليف الحلقة والواجب:* ${document.getElementById('memory_assignment_text').value || 'لا يوجد تكليف مدون'}\n`;
-            report += `  • *الرأي والتقدم الملحوظ في الحفظ:* ${document.getElementById('memory_feedback_text').value || 'لا يوجد ملحوظات'}\n\n`;
-
             let checkedItems = [];
             const schemaNames = {
                 'init_intentions': 'استحضار نيات المحراب العلية🎯', 'q_prayers': 'الصلوات الخمس والسنن الرواتب🕌', 'q_fajr': 'ركعتا الفجر (السنة)🌅', 'q_azkar_morning': 'أذكار الصباح كاملة☀️', 'q_azkar_evening': 'أذكار المساء كاملة🌆', 'q_duha': 'ركعتا الضحى🌤️', 'q_sleep_mulk': 'أذكار النوم وسورة الملك والكافرون🌌', 'q_quran': 'الورد القرآني والتدبر📖', 'q_witr': 'ركعة الوتر الشافية🌌',
@@ -1482,7 +1343,6 @@
                 'challenge_task': 'المهمة التشجيعية لليوم🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
                 'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'sc_jazaa_segmented': 'مقطع الجزاء التربوي المجزأ🌱',
                 'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
-                'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅',
                 'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
             };
 
@@ -1502,5 +1362,3 @@
     </script>
 </body>
 </html>
-
-```
