@@ -212,7 +212,7 @@
             <h1 class="font-serif text-3xl md:text-5xl text-burgundy font-bold mb-4 tracking-wide">مِحراب البهجة والارتِقاء المَعرفي</h1>
             
             <p class="text-sm md:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
-                مساحتنا الهادئة لتوثيق السعي الجميل، وتدبر النعم البسيطة، والارتقاء بالنفس يوماً بعد يوم بكل حب.
+                مساحتنا الهادئة لتوثيق السعي الجميل، وتدبر النعم البسيطة، والارتقاء بالنفس يوماً بعد يوم بكل بركة.
             </p>
 
             <!-- Premium Quote Callout with Elegant Link -->
@@ -263,6 +263,21 @@
 
         <form id="trackerForm" class="p-6 md:p-10 space-y-10" oninput="triggerAutoSave()">
             
+            <!-- INTENTIONS CHECKPOINT -->
+            <div class="luxury-card rounded-[2rem] p-6 border-2 border-dashed border-roseGold-soft/80 relative overflow-hidden bg-roseGold-light/20 shadow-sm">
+                <div class="absolute -top-6 -left-6 text-roseGold-soft opacity-30 text-6xl"><i class="fa-solid fa-heart"></i></div>
+                <h3 class="font-serif text-lg md:text-xl text-burgundy mb-3 flex items-center gap-3">
+                    <span class="text-2xl">🎯</span> نياتكِ وأنتِ تملئين المِحراب الآن؟
+                </h3>
+                <div class="space-y-3">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="checkbox" id="init_intentions" class="custom-checkbox task-check">
+                        <span class="text-xs md:text-sm font-bold text-burgundy leading-relaxed">أستحضر نياتي العليّة لجعل هذا السعي والتوثيق عبادة هادفة وطاعة لربنا 🤲</span>
+                    </label>
+                    <textarea id="init_intentions_text" rows="2" placeholder="دوني نية مستحرة في قلبكِ اليوم (تقرباً لله، استثماراً للوقت، طلباً للعلم النافع والبركة، إسعاداً لنفسك ولمن تحبين...)" class="w-full bg-white rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all placeholder-gray-400 shadow-inner"></textarea>
+                </div>
+            </div>
+
             <!-- SECTION 1: MOOD TRACKER -->
             <div class="luxury-card rounded-2xl p-6 border border-roseGold-soft/40 relative overflow-hidden">
                 <div class="absolute -top-8 -left-8 text-roseGold-light opacity-30 text-7xl"><i class="fa-solid fa-heart"></i></div>
@@ -292,7 +307,7 @@
                         </div>
                     </label>
                     <label class="cursor-pointer">
-                        <input type="radio" name="mood" value="met ومتعبة صابرة ومحتسبة 🌧️" class="sr-only peer">
+                        <input type="radio" name="mood" value="متعبة صابرة ومحتسبة 🌧️" class="sr-only peer">
                         <div class="p-4 rounded-xl border border-gray-100 bg-white hover:bg-blush-light/50 peer-checked:border-blush-medium peer-checked:bg-blush-light/80 peer-checked:shadow-inner transition-all duration-300">
                             <span class="text-3xl block mb-2">🌧️</span>
                             <span class="text-sm font-medium">متعب قليلاً</span>
@@ -303,12 +318,12 @@
 
             <!-- DYNAMIC CHALLENGE FROM ANAS -->
             <div id="anasChallengeBox" class="hidden bg-gradient-to-r from-blush-light to-white border-2 border-roseGold p-5 rounded-2xl shadow-sm relative">
-                <span class="absolute -top-3 right-5 bg-burgundy text-white px-3 py-0.5 rounded-full text-[10px] font-bold">مهمة تشجيعية من شريك السعي 🤝</span>
+                <span class="absolute -top-3 right-5 bg-burgundy text-white px-3 py-0.5 rounded-full text-[10px] font-bold">مهمة تشجيعية ودعم من شريك السعي 🤝</span>
                 <div class="flex items-start gap-4 mt-2">
                     <input type="checkbox" id="challenge_task" class="custom-checkbox task-check mt-1">
                     <div>
                         <label for="challenge_task" id="challenge_text" class="font-bold text-burgundy cursor-pointer text-sm"></label>
-                        <p class="text-xs text-gray-500 mt-1">مهمة مضافة ليومكِ المبارك لتشجيعك ومؤازرتكِ.</p>
+                        <p class="text-xs text-gray-500 mt-1">مهمة مضافة ليومكِ الاستثنائي لتثبيت عزمك ومؤازرتك.</p>
                     </div>
                 </div>
             </div>
@@ -350,7 +365,7 @@
                             <label for="q_azkar_morning" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
                                 <span>☀️</span> أذكار الصباح كاملة
                             </label>
-                            <p class="text-xs text-gray-500 mt-1">حصنك الحصين لبداية يوم طيب يفيض بالنور والبركة.</p>
+                            <p class="text-xs text-gray-500 mt-1">حصنك الحصين ودفء بداية يومك الطيب والمبارك.</p>
                         </div>
                     </div>
 
@@ -360,7 +375,7 @@
                             <label for="q_azkar_evening" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
                                 <span>🌆</span> أذكار المساء كاملة
                             </label>
-                            <p class="text-xs text-gray-500 mt-1">وقايتكِ ودفء روحكِ عند إقبال الليل المبارك.</p>
+                            <p class="text-xs text-gray-500 mt-1">حصانة نفسك وسلامة قلبك مع إقبال الليل المبارك.</p>
                         </div>
                     </div>
 
@@ -378,9 +393,9 @@
                         <input type="checkbox" id="q_sleep_mulk" class="custom-checkbox task-check mt-1">
                         <div>
                             <label for="q_sleep_mulk" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
-                                <span>🌌</span> أذكار النوم وسورة الملك
+                                <span>🌌</span> أذكار النوم والملك وسورة الكافرون
                             </label>
-                            <p class="text-xs text-gray-500 mt-1">النوم على طهر والاعتصام بالسور الواقية المنجية.</p>
+                            <p class="text-xs text-gray-500 mt-1">مع تذكر براءة الشرك واستحضار نوايا جعل النوم عبادة للتقوّي.</p>
                         </div>
                     </div>
 
@@ -404,7 +419,7 @@
                         <input type="checkbox" id="q_witr" class="custom-checkbox task-check mt-1">
                         <div>
                             <label for="q_witr" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
-                                <span>🌃</span> ركعة الوتر الشافية
+                                <span>🌌</span> ركعة الوتر الشافية
                             </label>
                             <p class="text-xs text-gray-500 mt-1">نهاية اليوم المطمئنة (وإن تيسر قيام ليل فخير عظيم ونور بركة).</p>
                         </div>
@@ -417,50 +432,31 @@
                         <span>📝</span> القراءة والتدوين الجميل والرقائق
                     </h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between">
+                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between md:col-span-2">
                             <div>
-                                <label class="flex items-center gap-3 font-medium text-sm text-burgundy cursor-pointer">
+                                <label class="flex items-center gap-3 font-bold text-sm text-burgundy cursor-pointer">
                                     <input type="checkbox" id="read_raqaiq" class="custom-checkbox task-check">
-                                    <span>📖 رقائق القرآن: قراءة فصل واحد يومياً</span>
+                                    <span>📖 رقائق القرآن: تدوين العناوين الجذابة والفوائد</span>
                                 </label>
-                                <div class="mt-3">
-                                    <span class="text-[11px] text-roseGold-dark font-bold">📖 خلصتي فصل إيه أو لحد صفحة كام؟</span>
-                                    <input type="text" id="read_raqaiq_chapter" placeholder="اسم الفصل أو رقم الصفحة..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:outline-none border border-transparent focus:border-roseGold">
+                                <div class="mt-2.5 bg-roseGold-light/40 p-3 rounded-lg border border-roseGold-soft/30">
+                                    <span class="text-[11px] text-burgundy font-bold block mb-1">📍 مهمة الفهرس الحالية (على مدار ٤ أيام):</span>
+                                    <p class="text-[10px] text-gray-500 leading-relaxed">قراءة العناوين في الفهرس وتصفح فصول الكتاب كاملاً، وتدوين أكثر عنوان أو فكرة استرعت اهتمامك وأسرت قلبكِ في كل فصل بالتفصيل:</p>
                                 </div>
                             </div>
-                            <textarea id="raqaiq_note" rows="2" placeholder="اكتبي خاطرة لمست قلبكِ وتأثرتِ بها اليوم..." class="mt-3 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold"></textarea>
+                            <textarea id="raqaiq_note" rows="4" placeholder="دوني هنا العناوين والموضوعات التي أسرتكِ وما لمس قلبكِ بقوة من رقائق فصول الكتاب اليوم..." class="mt-3 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold shadow-inner"></textarea>
                         </div>
-                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between">
-                            <div>
-                                <span class="text-xs text-roseGold-dark font-semibold">💭 أثر قراءة الرقائق:</span>
-                                <p class="text-xs text-gray-500 mt-1">إيه اللي حابة تعمليه بعد قراءة الفصل اليوم؟</p>
-                            </div>
-                            <textarea id="read_action" rows="4" placeholder="خطة عمل بسيطة، دعاء معين، أو خلق حابة تطبقيه اليوم..." class="mt-3 w-full bg-roseGold-light/30 rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold"></textarea>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between">
-                            <div class="flex items-center gap-3">
-                                <input type="checkbox" id="read_booklets" class="custom-checkbox task-check">
-                                <div>
-                                    <label for="read_booklets" class="text-sm font-medium text-burgundy cursor-pointer">📚 سلسلة الكتيبات</label>
-                                    <p class="text-[11px] text-gray-400">تدارس ومراجعة الكتيبات المباركة.</p>
-                                </div>
-                            </div>
-                            <div class="mt-3">
-                                <span class="text-[11px] text-roseGold-dark font-bold">💡 انجزتي فيها إيه وشيء استوقفكِ منتظرة تطبقيه؟</span>
-                                <textarea id="read_booklets_progress" rows="2" placeholder="اكتبي سطرًا عما تم إنجازه وشيء مميز أثر فيكِ اليوم..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:outline-none border border-transparent focus:border-roseGold"></textarea>
-                            </div>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between">
+                        
+                        <div class="bg-white p-4 rounded-xl border border-roseGold-soft/30 flex flex-col justify-between md:col-span-2">
                             <div class="flex items-center gap-3">
                                 <input type="checkbox" id="read_sawa_kawa" class="custom-checkbox task-check">
                                 <div>
-                                    <label for="read_sawa_kawa" class="text-sm font-medium text-burgundy cursor-pointer">📚 كتاب صُوى وكُوى</label>
-                                    <p class="text-[11px] text-gray-400">رحلة في تدارس واستيعاب هذا الكتاب الرفيع.</p>
+                                    <label for="read_sawa_kawa" class="text-sm font-bold text-burgundy cursor-pointer">📚 كتاب صُوى وكُوى</label>
+                                    <p class="text-[11px] text-gray-400">تدارس المادة العلمية وتدوين التقدم والمفاهيم العميقة.</p>
                                 </div>
                             </div>
                             <div class="mt-3">
-                                <span class="text-[11px] text-roseGold-dark font-bold">💬 ما الموضوعات التي قرأتِ عنها اليوم ومن صـ كم لـ كم؟ وأبرز 3 فوائد:</span>
-                                <textarea id="read_sawa_kawa_progress" rows="4" placeholder="دوني هنا الموضوعات، أرقام الصفحات، وأبرز ٣ فوائد استوقفت قلبكِ اليوم..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:outline-none border border-transparent focus:border-roseGold"></textarea>
+                                <span class="text-[11px] text-roseGold-dark font-bold">💬 ما الموضوعات التي قرأتِ عنها اليوم ومن صـ كام لـ كام؟ وأبرز ٣ فوائد:</span>
+                                <textarea id="read_sawa_kawa_progress" rows="4" placeholder="اكتبي نطاق الصفحات، الموضوعات، وأبرز ٣ فوائد استوقفت فكرك وتأملتِ فيها اليوم..." class="mt-1.5 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:outline-none border border-transparent focus:border-roseGold shadow-inner"></textarea>
                             </div>
                         </div>
                     </div>
@@ -476,7 +472,7 @@
                             <input type="checkbox" id="sport_minimal" class="custom-checkbox task-check mt-1">
                             <div>
                                 <label for="sport_minimal" class="text-sm font-bold text-burgundy cursor-pointer">🏃‍♀️ أقل القليل (١٠ دقائق حركة)</label>
-                                <p class="text-xs text-gray-500 mt-1">تنشيط الجسد وتقدير الصحة.</p>
+                                <p class="text-xs text-gray-500 mt-1">تنشيط الجسد وتقدير الصحة والهمة.</p>
                             </div>
                         </div>
                         <div class="mt-3 pt-3 border-t border-gray-100">
@@ -516,14 +512,21 @@
                     </div>
                 </div>
 
-                <div class="bg-blush-light/60 p-4 rounded-xl border border-blush-soft flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
-                    <div>
-                        <span class="text-sm font-bold text-burgundy">🌟 الذكر الملازم اليومي:</span>
-                        <p class="text-xs text-gray-500">يتردد على اللسان طيلة اليوم (أثناء المشي، ترتيب البيت، الطبخ، الفراغ).</p>
+                <div class="bg-blush-light/60 p-5 rounded-2xl border border-blush-soft space-y-3">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+                        <div>
+                            <span class="text-sm font-bold text-burgundy">🌟 الذكر الملازم اليومي:</span>
+                            <p class="text-xs text-gray-500">يتردد على اللسان طيلة اليوم (أثناء المشي، ترتيب البيت، الطبخ، الفراغ).</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="dhikr_companion" class="custom-checkbox task-check">
+                            <label for="dhikr_companion" class="text-sm font-medium text-burgundy cursor-pointer">صاحبني الذكر طوال يومي</label>
+                        </div>
                     </div>
-                    <div class="flex items-center gap-2">
-                        <input type="checkbox" id="dhikr_companion" class="custom-checkbox task-check">
-                        <label for="dhikr_companion" class="text-sm font-medium text-burgundy cursor-pointer">صاحبني الذكر طوال يومي</label>
+                    <!-- Small Text Input for Selected Dhikr -->
+                    <div class="pt-2 border-t border-blush-soft/40">
+                        <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم؟</label>
+                        <input type="text" id="dhikr_companion_text" placeholder="مثال: الاستغفار، الحوقلة، الصلاة على النبي، سبحان الله وبحمده..." class="w-full bg-white rounded-lg p-2.5 text-xs border border-blush-soft focus:outline-none focus:border-roseGold transition-all">
                     </div>
                 </div>
 
@@ -691,10 +694,6 @@
                 </div>
             </div>
 
-            <div class="divider">
-                <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-
             <!-- SECTION 4: INTELLECTUAL GROWTH -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3 border-b border-roseGold pb-3">
@@ -747,7 +746,7 @@
                                 <input type="checkbox" id="sc_jazaa_segmented" class="custom-checkbox task-check">
                                 <div class="text-xs text-burgundy">
                                     <span class="font-bold block">الجزاء التربوي (مجزأ)</span>
-                                    <span class="text-[10px] text-gray-400">مقطع يومي بسيط 💡</span>
+                                    <span class="text-[10px] text-gray-400">مقطع تربوي ميسّر 💡</span>
                                 </div>
                             </label>
                             <a href="https://youtube.com/playlist?list=PLI8bM-Ds28DipQr6WNSkt_EGT8o0p-3JA" target="_blank" class="mt-3 inline-flex items-center justify-center gap-1 text-[10px] bg-red-50 text-red-600 hover:bg-red-100 px-3 py-1.5 rounded-full font-bold transition-all"><i class="fa-brands fa-youtube"></i> قائمة التشغيل</a>
@@ -764,7 +763,7 @@
                         <!-- Segmented Jazaa Note -->
                         <div class="bg-blush-superlight/40 p-4 rounded-xl border border-blush-soft">
                             <span class="text-xs text-burgundy font-bold">💭 المعلومة أو طريقة التربية المستفادة من مقطع الجزاء التربوي اليوم:</span>
-                            <textarea id="jazaa_segmented_notes" rows="3" placeholder="دوني فكرة عملية أو مهارة تربوية تم استخلاصها اليوم لتطبيقها بكل حب ووعي..." class="mt-2 w-full bg-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-roseGold-soft focus:border-roseGold"></textarea>
+                            <textarea id="jazaa_segmented_notes" rows="3" placeholder="دوني فائدة تربوية أو طريقة عملية تم استخلاصها اليوم لتطبيقها بكل وعي وسرور..." class="mt-2 w-full bg-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-roseGold-soft focus:border-roseGold"></textarea>
                         </div>
                     </div>
                 </div>
@@ -814,6 +813,86 @@
                 </div>
             </div>
 
+            <!-- SECTION 5: MEMORY ACTIVATION COURSE (SPECIAL THEME) -->
+            <div class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-slate-100 rounded-[2.5rem] p-6 md:p-8 border-2 border-gold/75 shadow-2xl relative overflow-hidden">
+                <!-- Background decorative brains and gold accents -->
+                <div class="absolute -top-12 -left-12 text-gold/10 text-9xl pointer-events-none"><i class="fa-solid fa-brain"></i></div>
+                <div class="absolute -bottom-8 -right-8 text-gold/5 text-8xl pointer-events-none"><i class="fa-solid fa-graduation-cap"></i></div>
+
+                <div class="flex items-center gap-3 border-b border-gold/30 pb-4 mb-6">
+                    <span class="text-3xl text-gold-light">🧠</span>
+                    <div>
+                        <h3 class="font-serif text-xl md:text-2xl text-gold-light font-bold flex items-center gap-2">جناح دورة تنشيط الذاكرة والارتقاء الإدراكي</h3>
+                        <p class="text-xs text-roseGold-soft/80 mt-0.5">المساحة المخصصة لبناء ملكات الحفظ السريع واستثمار العقل المبارك.</p>
+                    </div>
+                </div>
+
+                <!-- Course Target Motivator Badge -->
+                <div class="bg-white/5 border border-gold/20 p-4 rounded-2xl text-center mb-6 relative">
+                    <span class="absolute -top-3 right-6 bg-gold text-slate-950 px-3 py-0.5 rounded-full text-[9px] font-bold">الهدف المأمول والوعد 🎯</span>
+                    <p class="text-sm font-bold text-gold-light">
+                        حفظ الصفحة كاملة في ٥ دقائق بدلاً من ٣٠ دقيقة! ⚡
+                    </p>
+                    <p class="text-[11px] text-gray-300 mt-1 leading-relaxed">
+                        "هذا الهدف العظيم مجرّب وبإذن الله ستصلين إليه بكل يسر وعذوبة حين يتم الالتزام التام بالتكليفات والتمارين المنهجية."
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Session Attendance (Radios - exclusive selection) -->
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <span class="text-xs font-bold text-gold-light block">🌅 حضور المجلس التعليمي:</span>
+                            <p class="text-[11px] text-gray-300">اختاري المجلس الذي تم حضوره والتفاعل معه اليوم (خيار فردي، والرمز ينتقل تلقائياً).</p>
+                        </div>
+                        <div class="flex items-center gap-3 w-full sm:w-auto">
+                            <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs">
+                                <input type="radio" name="memory_session" value="الصباح 🌅" class="accent-gold h-4 w-4">
+                                <span>مجلس الصباح 🌅</span>
+                            </label>
+                            <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs">
+                                <input type="radio" name="memory_session" value="المساء 🌌" class="accent-gold h-4 w-4">
+                                <span>مجلس المساء 🌌</span>
+                            </label>
+                            <button type="button" onclick="clearMemorySessionRadio()" class="text-[10px] text-gray-400 hover:text-white transition-all underline">تراجع</button>
+                        </div>
+                    </div>
+
+                    <!-- Coach Guidance Interaction -->
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex items-start gap-4">
+                        <input type="checkbox" id="memory_interaction" class="custom-checkbox task-check mt-1">
+                        <div>
+                            <label for="memory_interaction" class="text-sm font-bold text-gold-light cursor-pointer">تم التفاعل بوعي تام مع توجيهات المدرب خلال الحلقة؟ 🎯</label>
+                            <p class="text-xs text-gray-300 mt-0.5">الحرص على اليقظة الكاملة ومتابعة المدرب خطوة بخطوة.</p>
+                        </div>
+                    </div>
+
+                    <!-- Exercises & Assignments Text inputs -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                            <span class="text-xs font-bold text-gold-light block">🏋️‍♂️ تمرينات اليوم التي تمت في الحلقة:</span>
+                            <textarea id="memory_exercises_text" rows="3" placeholder="دوني التمارين الذهنية التي طبقتموها اليوم خلال الحلقة..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
+                        </div>
+                        <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-gold-light block">📝 تكليف الحلقة المطلوب:</span>
+                                <textarea id="memory_assignment_text" rows="2" placeholder="اكتبي التكليف والواجب الذي أقرّه المدرب للتدرب عليه..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
+                            </div>
+                            <div class="mt-3 flex items-center gap-3 bg-slate-950/30 p-2.5 rounded-lg border border-white/5">
+                                <input type="checkbox" id="memory_assignment_done" class="custom-checkbox task-check">
+                                <label for="memory_assignment_done" class="text-xs font-bold text-gold-light cursor-pointer">تم الانتهاء من أداء التكليف بالكامل؟ ✅</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Honest Progress Evaluation -->
+                    <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                        <span class="text-xs font-bold text-gold-light block">💭 رأيك بصراحة في التمارين والتكليف، هل تشعرين بتقدم حقيقي في الحفظ والسرعة؟</span>
+                        <textarea id="memory_feedback_text" rows="3" placeholder="دوني انطباعك وخطوات التقدم في الحفظ، وكم استغرقتِ في حفظ وجه القرآن اليوم مقارنة بالأمس..." class="mt-2 w-full bg-slate-950/50 text-white rounded-lg p-2.5 text-xs focus:ring-1 focus:ring-gold focus:outline-none placeholder-gray-500 border border-white/10 focus:border-gold"></textarea>
+                    </div>
+                </div>
+            </div>
+
             <!-- MYSTERY ENVELOPE -->
             <div class="divider">
                 <i class="fa-solid fa-envelope-open-text"></i>
@@ -824,7 +903,7 @@
                     <div class="absolute -bottom-8 -left-8 text-roseGold opacity-10"><i class="fa-solid fa-envelope-open-text text-9xl"></i></div>
                     <span class="text-2xl block mb-2">💌</span>
                     <h4 class="font-serif text-xl text-burgundy mb-2">دعاء ورسالة اليوم الراقية المخبأة لكِ</h4>
-                    <p id="closedMessageLabel" class="text-xs text-roseGold-dark mb-4">اضغطي لفتح المغلف قراءة كلمات التشجيع والدعاء الصادق المخصص لليوم...</p>
+                    <p id="closedMessageLabel" class="text-xs text-roseGold-dark mb-4">اضغطي لفتح المغلف وقراءة كلمات التشجيع والدعاء المخصص لليوم...</p>
                     <button type="button" onclick="revealSecretMessage()" id="revealBtn" class="bg-burgundy hover:bg-roseGold-dark text-white px-6 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none">افتحي المغلف برفق 🌸</button>
                     <div id="secretMessageContainer" class="hidden mt-4 pt-4 border-t border-roseGold-soft/50">
                         <p id="secretText" class="font-serif italic text-burgundy text-md leading-relaxed whitespace-pre-line text-center"></p>
@@ -868,8 +947,8 @@
                 <h4 class="font-bold text-sm text-burgundy border-b border-roseGold-soft pb-2">👁️ مراقبة سعي منة الحالي:</h4>
                 <div class="space-y-2 text-xs">
                     <p><strong>🕊️ نبض قلبها اليوم:</strong> <span id="view_mood" class="font-bold text-burgundy">-</span></p>
+                    <p><strong>📖 استهلال النوايا:</strong> <span id="view_intentions" class="italic text-gray-700">-</span></p>
                     <p><strong>📖 تدوين رقائق القرآن:</strong> <span id="view_raqaiq" class="italic text-gray-700">-</span></p>
-                    <p><strong>💭 الخطة والأثر:</strong> <span id="view_action" class="italic text-gray-700">-</span></p>
                     <p><strong>🧘‍♀️ خلوة المحايدة:</strong> <span id="view_neutrality" class="italic text-gray-700">-</span></p>
                     <p><strong>🤲 بث ونجوى:</strong> <span id="view_duaa" class="italic text-gray-700">-</span></p>
                     <p><strong>🌸 مشاركة الفوائد والأسئلة:</strong> <span id="view_benefit" class="italic text-gray-700">-</span></p>
@@ -884,16 +963,20 @@
             <!-- Beautiful text blocks for reflections mirror -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
+                    <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">🎯 نيات منة المستحضرة اليوم:</span>
+                    <p id="mirror_init_intentions_notes" class="text-xs italic text-gray-700">-</p>
+                </div>
+                <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📖 الورد القرآني والتدبر:</span>
                     <p id="mirror_quran_progress" class="text-xs italic text-gray-700">-</p>
                 </div>
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
-                    <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📚 سلسلة الكتيبات والوقوف العملي:</span>
-                    <p id="mirror_booklets_progress" class="text-xs italic text-gray-700">-</p>
-                </div>
-                <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📚 تدوين صوى وكوى والفوائد:</span>
                     <p id="mirror_sawa_kawa_progress" class="text-xs italic text-gray-700">-</p>
+                </div>
+                <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
+                    <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">🌟 الذكر الملازم المختار:</span>
+                    <p id="mirror_dhikr_companion_text" class="text-xs italic text-gray-700">-</p>
                 </div>
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">👟 الرياضة والحركة المنجزة:</span>
@@ -914,6 +997,14 @@
                 <div class="bg-amber-50/40 p-4 rounded-xl border border-roseGold-soft">
                     <span class="text-xs font-bold text-burgundy block border-b pb-1 mb-2">📖 تساؤلات ومذاكرة أعذب المناهل:</span>
                     <p id="mirror_manahil_notes" class="text-xs italic text-gray-700">-</p>
+                </div>
+                <!-- Memory Activation Course Mirror Info -->
+                <div class="bg-indigo-50/50 p-4 rounded-xl border border-indigo-200 md:col-span-2 space-y-2">
+                    <span class="text-xs font-bold text-indigo-950 block border-b pb-1 mb-2">🧠 متابعة دورة تنشيط الذاكرة:</span>
+                    <p><strong>حضور المجلس:</strong> <span id="mirror_memory_session" class="text-xs italic text-gray-700">-</span></p>
+                    <p><strong>التمارين التي تم تطبيقها:</strong> <span id="mirror_memory_exercises" class="text-xs italic text-gray-700">-</span></p>
+                    <p><strong>تكليف الحلقة المطلوب:</strong> <span id="mirror_memory_assignment" class="text-xs italic text-gray-700">-</span></p>
+                    <p><strong>رأيها وتقدم مستواها في الحفظ:</strong> <span id="mirror_memory_feedback" class="text-xs italic text-gray-700">-</span></p>
                 </div>
             </div>
 
@@ -961,7 +1052,7 @@
     <script type="module">
         import { initializeApp, getApps } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getFirestore, doc, setDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
-        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
         // Hardcoded Safe Connection Config
         const firebaseConfig = {
@@ -1065,16 +1156,15 @@
                 cb.checked = (data.tasks && data.tasks[cb.id]) ? true : false;
             });
             document.getElementById('raqaiq_note').value = data.raqaiqNote || '';
-            document.getElementById('read_action').value = data.readAction || '';
             document.getElementById('heart_recharge_text').value = data.heartRechargeText || '';
             document.getElementById('neutrality_notes').value = data.neutralityNotes || '';
             document.getElementById('duaa_notes').value = data.duaaNotes || '';
             document.getElementById('benefit_sharing_notes').value = data.benefitSharingNotes || '';
             
-            // Apply New/Updated fields safely
+            // New/Updated text fields safely loaded
+            document.getElementById('init_intentions_text').value = data.initIntentionsText || '';
+            document.getElementById('dhikr_companion_text').value = data.dhikrCompanionText || '';
             document.getElementById('q_quran_progress').value = data.quranProgress || '';
-            document.getElementById('read_raqaiq_chapter').value = data.raqaiqChapter || '';
-            document.getElementById('read_booklets_progress').value = data.bookletsProgress || '';
             document.getElementById('read_sawa_kawa_progress').value = data.sawaKawaProgress || '';
             document.getElementById('sport_minimal_details').value = data.sportMinimalDetails || '';
             document.getElementById('monajid_benefit_notes').value = data.monajidBenefitNotes || '';
@@ -1082,24 +1172,42 @@
             document.getElementById('shatibiya_progress_notes').value = data.shatibiyaProgressNotes || '';
             document.getElementById('manahil_questions_notes').value = data.manahilQuestionsNotes || '';
 
+            // Loading Memory course fields
+            if (data.memorySession) {
+                const radio = document.querySelector(`input[name="memory_session"][value="${data.memorySession}"]`);
+                if (radio) radio.checked = true;
+            } else {
+                document.querySelectorAll('input[name="memory_session"]').forEach(r => r.checked = false);
+            }
+            document.getElementById('memory_exercises_text').value = data.memoryExercisesText || '';
+            document.getElementById('memory_assignment_text').value = data.memoryAssignmentText || '';
+            document.getElementById('memory_feedback_text').value = data.memoryFeedbackText || '';
+
             // Update basic text summaries for Anas Control Room
             document.getElementById('view_mood').innerText = data.mood || '-';
+            document.getElementById('view_intentions').innerText = data.initIntentionsText || '-';
             document.getElementById('view_raqaiq').innerText = data.raqaiqNote || '-';
-            document.getElementById('view_action').innerText = data.readAction || '-';
             document.getElementById('view_neutrality').innerText = data.neutralityNotes || '-';
             document.getElementById('view_duaa').innerText = data.duaaNotes || '-';
             document.getElementById('view_benefit').innerText = data.benefitSharingNotes || '-';
 
             // Mirror Reflections/Text Fields to Admin Room
+            document.getElementById('mirror_init_intentions_notes').innerText = data.initIntentionsText || 'لم يتم استهلال النوايا بعد اليوم';
             document.getElementById('mirror_monajid_notes').innerText = data.monajidBenefitNotes || 'لا يوجد تدوينات حالياً';
             document.getElementById('mirror_jazaa_notes').innerText = data.jazaaSegmentedNotes || 'لا يوجد تدوينات حالياً';
             document.getElementById('mirror_shatibiya_notes').innerText = data.shatibiyaProgressNotes || 'لا يوجد تدوينات حالياً';
             document.getElementById('mirror_manahil_notes').innerText = data.manahilQuestionsNotes || 'لا يوجد تدوينات حالياً';
+            document.getElementById('mirror_dhikr_companion_text').innerText = data.dhikrCompanionText || 'لم يتم تحديد ذكر اليوم';
             
             document.getElementById('mirror_quran_progress').innerText = data.quranProgress || 'لم يتم البدء اليوم';
-            document.getElementById('mirror_booklets_progress').innerText = data.bookletsProgress || 'لم يتم البدء اليوم';
             document.getElementById('mirror_sawa_kawa_progress').innerText = data.sawaKawaProgress || 'لم يتم البدء اليوم';
             document.getElementById('mirror_sport_details').innerText = data.sportMinimalDetails || 'لم يتم البدء اليوم';
+
+            // Memory course mirroring
+            document.getElementById('mirror_memory_session').innerText = data.memorySession || 'لم يتم الحضور اليوم';
+            document.getElementById('mirror_memory_exercises').innerText = data.memoryExercisesText || 'لا يوجد تدوين للتمرينات';
+            document.getElementById('mirror_memory_assignment').innerText = data.memoryAssignmentText || 'لا يوجد تدوين للتكليف';
+            document.getElementById('mirror_memory_feedback').innerText = data.memoryFeedbackText || 'لا يوجد تقييم لتقدم الحفظ حالياً';
 
             // Generate Full Scale Live Checklist Mirror for Anas
             renderAdminChecklistMirror(data.tasks || {});
@@ -1120,22 +1228,27 @@
                     date: window.selectedDate,
                     mood: document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️',
                     raqaiqNote: document.getElementById('raqaiq_note').value,
-                    readAction: document.getElementById('read_action').value,
                     heartRechargeText: document.getElementById('heart_recharge_text').value,
                     neutralityNotes: document.getElementById('neutrality_notes').value,
                     duaaNotes: document.getElementById('duaa_notes').value,
                     benefitSharingNotes: document.getElementById('benefit_sharing_notes').value,
                     
-                    // Added/updated text properties
+                    // Text fields saved safely
+                    initIntentionsText: document.getElementById('init_intentions_text').value,
+                    dhikrCompanionText: document.getElementById('dhikr_companion_text').value,
                     quranProgress: document.getElementById('q_quran_progress').value,
-                    raqaiqChapter: document.getElementById('read_raqaiq_chapter').value,
-                    bookletsProgress: document.getElementById('read_booklets_progress').value,
                     sawaKawaProgress: document.getElementById('read_sawa_kawa_progress').value,
                     sportMinimalDetails: document.getElementById('sport_minimal_details').value,
                     monajidBenefitNotes: document.getElementById('monajid_benefit_notes').value,
                     jazaaSegmentedNotes: document.getElementById('jazaa_segmented_notes').value,
                     shatibiyaProgressNotes: document.getElementById('shatibiya_progress_notes').value,
                     manahilQuestionsNotes: document.getElementById('manahil_questions_notes').value,
+
+                    // Memory course fields saved
+                    memorySession: document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : '',
+                    memoryExercisesText: document.getElementById('memory_exercises_text').value,
+                    memoryAssignmentText: document.getElementById('memory_assignment_text').value,
+                    memoryFeedbackText: document.getElementById('memory_feedback_text').value,
                     
                     tasks: tasksObj
                 };
@@ -1159,7 +1272,7 @@
             try {
                 await setDoc(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_messages', window.selectedDate), { message, date: window.selectedDate }, { merge: true });
                 await setDoc(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_challenges', window.selectedDate), { challenge, date: window.selectedDate }, { merge: true });
-                showToast("تم تحديث السحاب والمفاجآت بنجاح! ✨");
+                showToast("تم تحديث السحاب والتنسيق بنجاح! ✨");
             } catch (e) { showToast("خطأ أثناء الاتصال وحفظ التعديلات السحابية."); }
         };
 
@@ -1171,25 +1284,34 @@
             container.classList.remove('hidden'); document.getElementById('revealBtn').classList.add('hidden'); document.getElementById('closedMessageLabel').classList.add('hidden');
         };
 
+        window.clearMemorySessionRadio = function() {
+            document.querySelectorAll('input[name="memory_session"]').forEach(radio => radio.checked = false);
+            window.triggerAutoSave();
+        };
+
         function renderAdminChecklistMirror(tasks) {
             const mirrorContainer = document.getElementById('admin_full_checklist_mirror');
             if(!mirrorContainer) return;
 
             const schema = {
                 "الأوراد اليومية المباركة 🌿": [
+                    { id: 'init_intentions', label: 'استحضار نيات المحراب العلية 🎯' },
                     { id: 'q_prayers', label: 'الصلوات الخمس في أوقاتها 🕌' },
                     { id: 'q_fajr', label: 'ركعتا الفجر (السنة) 🌅' },
                     { id: 'q_azkar_morning', label: 'أذكار الصباح كاملة ☀️' },
                     { id: 'q_azkar_evening', label: 'أذكار المساء كاملة 🌆' },
                     { id: 'q_duha', label: 'ركعتا الضحى المباركة 🌤️' },
-                    { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك 🌌' },
+                    { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك والكافرون 🌌' },
                     { id: 'q_quran', label: 'الورد القرآني والتدبر 📖' },
-                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌃' }
+                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
+                ],
+                "جناح تنشيط الذاكرة والارتقاء 🧠": [
+                    { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
+                    { id: 'memory_assignment_done', label: 'الانتهاء التام من أداء التكليف ✅' }
                 ],
                 "القراءة والترويح وتقدير الجسد 🌸": [
-                    { id: 'read_raqaiq', label: 'قراءة فصل رقائق القرآن 📖' },
-                    { id: 'read_booklets', label: 'مراجعة سلسلة الكتيبات 📚' },
-                    { id: 'read_sawa_kawa', label: 'مذاكرة صوى وكوى 📚' },
+                    { id: 'read_raqaiq', label: 'قراءة فصل رقائق القرآن (مهمة الفهرس) 📖' },
+                    { id: 'read_sawa_kawa', label: 'دراسة كتاب صُوى وكُوى ومذاكرته 📚' },
                     { id: 'sport_minimal', label: 'الرياضة اليومية (أقل القليل) 👟' },
                     { id: 'halal_recreation', label: 'مكافأة الترويح الحلال 🎈' },
                     { id: 'challenge_task', label: 'المهمة التشجيعية لليوم 🤝' }
@@ -1211,7 +1333,7 @@
                     { id: 'sc_ward', label: 'طاقة ورد 🌹' },
                     { id: 'sc_ashza', label: 'أشذاء وأنداء للكملي 🌿' },
                     { id: 'sc_monajid', label: '٤ مقاطع للشيخ المنجد 🌍' },
-                    { id: 'sc_jazaa_segmented', label: 'الجزاء التربوي (مجزأ) 🌱' },
+                    { id: 'sc_jazaa_segmented', label: 'الجزاء التربوي (مقطع يومي مجزأ) 🌱' },
                     { id: 'metn_shatibiya', label: 'حفظ الشاطبية 📜' },
                     { id: 'book_manahil', label: 'مذاكرة أعذب المناهل 📖' },
                     { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' }
@@ -1327,32 +1449,40 @@
             const dateStr = new Date(window.selectedDate).toLocaleDateString('ar-EG', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
             const mood = document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️';
             const progress = document.getElementById('progressText').innerText;
+            const selectedSession = document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : 'لم يتم الحضور اليوم';
             
-            let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي:* ${progress}\n\n`;
+            let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي اليومي:* ${progress}\n\n`;
             
             report += `🌿 *كشف الملاحظات والتدوينات الروحية والعلمية:*\n`;
+            report += `  • *استهلال نيات اليوم:* ${document.getElementById('init_intentions_text').value || 'تم استحضار النية بالقلب'}\n`;
+            report += `  • *الذكر الملازم اليومي المختار:* ${document.getElementById('dhikr_companion_text').value || 'لم يتم التدوين'}\n`;
             report += `  • *الورد القرآني المنجز:* ${document.getElementById('q_quran_progress').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *تدوين رقائق القرآن:* الفصل: [${document.getElementById('read_raqaiq_chapter').value || 'لم يحدد'}] -> الخاطرة: ${document.getElementById('raqaiq_note').value || 'لم يتم التدوين'}\n`;
-            report += `  • *الخطة والأثر العملي:* ${document.getElementById('read_action').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *سلسلة الكتيبات:* ${document.getElementById('read_booklets_progress').value || 'لم يتم التدوين اليوم'}\n`;
+            report += `  • *تدوين رقائق القرآن (الفهرس):* ${document.getElementById('raqaiq_note').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *كتاب صُوى وكُوى والفوائد:* ${document.getElementById('read_sawa_kawa_progress').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *مستودع النعم الثلاث:* ${document.getElementById('heart_recharge_text').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *مذكرات خلوة المحايدة:* ${document.getElementById('neutrality_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *بث النجوى والدعاء:* ${document.getElementById('duaa_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *الرياضة والحركة:* ${document.getElementById('sport_minimal_details').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *فوائد المقتطفات (المنجد):* ${document.getElementById('monajid_benefit_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مستفاد الجزاء التربوي (المجزء):* ${document.getElementById('jazaa_segmented_notes').value || 'لم يتم التدوين اليوم'}\n`;
+            report += `  • *فوائد المقتطفات (المنجد والمشايخ):* ${document.getElementById('monajid_benefit_notes').value || 'لم يتم التدوين اليوم'}\n`;
+            report += `  • *مستفاد الجزاء التربوي (المجزأ):* ${document.getElementById('jazaa_segmented_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *مستوى حفظ ومراجعة الشاطبية:* ${document.getElementById('shatibiya_progress_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *مذاكرة وتساؤلات أعذب المناهل:* ${document.getElementById('manahil_questions_notes').value || 'لم يتم التدوين اليوم'}\n`;
             report += `  • *الفوائد والأسئلة العامة:* ${document.getElementById('benefit_sharing_notes').value || 'لا يوجد ملحوظات اليوم'}\n\n`;
 
+            report += `🧠 *جناح دورة تنشيط الذاكرة:* \n`;
+            report += `  • *حضور المجلس:* ${selectedSession}\n`;
+            report += `  • *تمرينات الحلقة اليومية:* ${document.getElementById('memory_exercises_text').value || 'لا يوجد تمرينات مدونة'}\n`;
+            report += `  • *تكليف الحلقة والواجب:* ${document.getElementById('memory_assignment_text').value || 'لا يوجد تكليف مدون'}\n`;
+            report += `  • *الرأي والتقدم الملحوظ في الحفظ:* ${document.getElementById('memory_feedback_text').value || 'لا يوجد ملحوظات'}\n\n`;
+
             let checkedItems = [];
             const schemaNames = {
-                'q_prayers': 'الصلوات الخمس والسنن الرواتب🕌', 'q_fajr': 'ركعتا الفجر (السنة)🌅', 'q_azkar_morning': 'أذكار الصباح☀️', 'q_azkar_evening': 'أذكار المساء🌆', 'q_duha': 'ركعتا الضحى🌤️', 'q_sleep_mulk': 'أذكار النوم وسورة الملك🌌', 'q_quran': 'الورد القرآني والتدبر📖', 'q_witr': 'ركعة الوتر الشافية🌌',
-                'read_raqaiq': 'قراءة فصل رقائق القرآن📖', 'read_booklets': 'مراجعة سلسلة الكتيبات📚', 'read_sawa_kawa': 'مذاكرة صوى وكوى📚', 'sport_minimal': 'الرياضة اليومية (أقل القليل)👟', 'halal_recreation': 'الترويح الحلال والبهجة🎈',
+                'init_intentions': 'استحضار نيات المحراب العلية🎯', 'q_prayers': 'الصلوات الخمس والسنن الرواتب🕌', 'q_fajr': 'ركعتا الفجر (السنة)🌅', 'q_azkar_morning': 'أذكار الصباح كاملة☀️', 'q_azkar_evening': 'أذكار المساء كاملة🌆', 'q_duha': 'ركعتا الضحى🌤️', 'q_sleep_mulk': 'أذكار النوم وسورة الملك والكافرون🌌', 'q_quran': 'الورد القرآني والتدبر📖', 'q_witr': 'ركعة الوتر الشافية🌌',
+                'read_raqaiq': 'قراءة فصل رقائق القرآن (مهمة الفهرس)📖', 'read_sawa_kawa': 'مذاكرة صوى وكوى والفوائد📚', 'sport_minimal': 'الرياضة اليومية (أقل القليل)👟', 'halal_recreation': 'الترويح الحلال والبهجة🎈',
                 'challenge_task': 'المهمة التشجيعية لليوم🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
                 'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'sc_jazaa_segmented': 'مقطع الجزاء التربوي المجزأ🌱',
                 'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
+                'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅',
                 'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
             };
 
@@ -1361,7 +1491,7 @@
             });
 
             if(checkedItems.length > 0) {
-                report += `✅ *المهام والأوراد والعبادات المنجزة:* \n  • ` + checkedItems.join('\n  • ') + `\n\n`;
+                report += `✅ *المهام والأوراد والعبادات المنجزة اليوم:* \n  • ` + checkedItems.join('\n  • ') + `\n\n`;
             }
             
             report += `🤝 *سنة سنة.. نبني عروجنا بهدوء وتوفيق متواصل.* 🌸`;
