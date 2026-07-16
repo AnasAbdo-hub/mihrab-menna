@@ -230,20 +230,6 @@
                 <i class="fa-solid fa-circle-notch text-roseGold" id="syncSpinner"></i>
             </div>
 
-            <!-- Lock Status Banner -->
-            <div id="lockBanner" class="hidden max-w-md mx-auto bg-emerald-50 text-emerald-800 border-2 border-emerald-200 p-4 rounded-2xl flex items-center justify-between gap-4 mb-6 shadow-sm">
-                <div class="flex items-center gap-3">
-                    <span class="text-2xl">🔒</span>
-                    <div class="text-right">
-                        <h4 class="font-bold text-xs">تم قفل واعتماد هذا اليوم بنجاح!</h4>
-                        <p class="text-[10px] text-emerald-700">لقد تم حفظ نسبة إنجازك التاريخية (<span id="lockedPercentageText" class="font-bold">0%</span>) وحمايتها من أي تغييرات مستقبلية.</p>
-                    </div>
-                </div>
-                <button type="button" id="adminUnlockBtn" onclick="unlockCurrentDay()" class="hidden bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-full text-[10px] font-bold shadow transition-all">
-                    إلغاء القفل 🔓
-                </button>
-            </div>
-
             <!-- Dynamic Live Progress Gauge -->
             <div class="mt-4 bg-roseGold-light/80 rounded-2xl p-4 inline-flex flex-col md:flex-row items-center gap-4 border border-roseGold-soft/40 shadow-sm max-w-md mx-auto w-full">
                 <div class="flex items-center gap-2">
@@ -254,13 +240,6 @@
                     <div id="progressBar" class="bg-gradient-to-r from-blush-medium to-roseGold-dark h-full transition-all duration-700 ease-out" style="width: 0%"></div>
                 </div>
                 <span id="progressText" class="text-sm font-number font-bold text-burgundy">0%</span>
-            </div>
-
-            <!-- Manual Lock Action Trigger -->
-            <div id="lockActionContainer" class="mt-4 flex justify-center">
-                <button type="button" id="manualLockBtn" onclick="lockCurrentDay()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2 rounded-full text-xs font-bold shadow-md flex items-center gap-2 transition-all hover:scale-105">
-                    <span>🔒</span> اعتماد وقفل الإنجاز اليومي
-                </button>
             </div>
             
             <!-- Connection Status Pill -->
@@ -429,7 +408,7 @@
                             </div>
                         </div>
                         <div class="mt-3">
-                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم?</span>
+                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم؟</span>
                             <textarea id="q_quran_progress" rows="2" placeholder="اكتبي السورة والآيات التي تم سماعها وتدبرها اليوم..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold"></textarea>
                         </div>
                     </div>
@@ -455,7 +434,7 @@
                             <div>
                                 <label class="flex items-center gap-3 font-bold text-sm text-burgundy cursor-pointer">
                                     <input type="checkbox" id="read_raqaiq" class="custom-checkbox task-check">
-                                    <span>📖 رقائق القرآن: تدوين العناوين الجذابة والفوائد</span>
+                                    <span>📖 رقائق القرآن: تدوين الفهرس والموضوعات الأكثر تماساً</span>
                                 </label>
                                 <div class="mt-2.5 bg-roseGold-light/40 p-3 rounded-lg border border-roseGold-soft/30">
                                     <span class="text-[11px] text-burgundy font-bold block mb-1">📍 مهمة الفهرس الحالية (على مدار ٤ أيام):</span>
@@ -551,14 +530,14 @@
                         </div>
                         <div class="flex items-center gap-3 w-full sm:w-auto">
                             <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs text-slate-100">
-                                <input type="radio" name="memory_session" value="الصباح 🌅" class="accent-gold h-4 w-4 task-radio" id="memory_session_morning">
+                                <input type="radio" name="memory_session" value="الصباح 🌅" class="accent-gold h-4 w-4" id="memory_session_morning">
                                 <span>مجلس الصباح 🌅</span>
                             </label>
                             <label class="flex-1 sm:flex-none flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 px-4 py-2 rounded-xl border border-white/5 hover:border-gold/30 cursor-pointer transition-all text-xs text-slate-100">
-                                <input type="radio" name="memory_session" value="المساء 🌌" class="accent-gold h-4 w-4 task-radio" id="memory_session_evening">
+                                <input type="radio" name="memory_session" value="المساء 🌌" class="accent-gold h-4 w-4" id="memory_session_evening">
                                 <span>مجلس المساء 🌌</span>
                             </label>
-                            <button type="button" id="clearMemoryRadioBtn" onclick="clearMemorySessionRadio()" class="text-[10px] text-gray-400 hover:text-white transition-all underline">تراجع</button>
+                            <button type="button" onclick="clearMemorySessionRadio()" class="text-[10px] text-gray-400 hover:text-white transition-all underline">تراجع</button>
                         </div>
                     </div>
 
@@ -640,63 +619,63 @@
                             <input type="checkbox" id="dh_short_1" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">سبحان الله</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_2" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">الحمد لله</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_3" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">لا إله إلا الله</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_4" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">الله أكبر</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_5" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">لا حول ولا قوة إلا بالله</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_6" class="tasbeeh-checkbox task-check">
                             <div class="text-xs text-burgundy leading-tight">
                                 <span class="font-bold block">سبحان الله وبحمده</span>
-                                <span class="text-[10px] text-gray-400">سبحان الله العظيم (١٠٠)</span>
+                                <span class="text-[10px] text-gray-400">سبحان الله العظيم (١٠0)</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_7" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">أستغفر الله وأتوب إليه</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_8" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">اللهم صل وسلم على نبينا محمد</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_9" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">يا مقلب القلوب ثبت قلبي...</span>
-                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
                             </div>
                         </label>
                     </div>
@@ -908,28 +887,6 @@
                                 </div>
                             </label>
                         </div>
-
-                        <!-- دورة ميثاق -->
-                        <div class="bg-roseGold-light/20 p-4 rounded-xl border border-roseGold-soft flex items-start gap-3">
-                            <input type="checkbox" id="course_meethaq" class="custom-checkbox task-check mt-1">
-                            <div>
-                                <label for="course_meethaq" class="font-bold text-sm text-burgundy cursor-pointer flex items-center gap-2">
-                                    <span>🤝</span> حضور دورة ميثاق
-                                </label>
-                                <p class="text-[11px] text-gray-500 font-normal mt-0.5">الاستماع للمجلس والتفاعل المنهجي مع الدورة.</p>
-                            </div>
-                        </div>
-
-                        <!-- تدوين رقائق وفوائد -->
-                        <div class="bg-roseGold-light/20 p-4 rounded-xl border border-roseGold-soft flex items-start gap-3">
-                            <input type="checkbox" id="write_raqaiq_benefits" class="custom-checkbox task-check mt-1">
-                            <div>
-                                <label for="write_raqaiq_benefits" class="font-bold text-sm text-burgundy cursor-pointer flex items-center gap-2">
-                                    <span>✍️</span> تدوين رقائق وفوائد
-                                </label>
-                                <p class="text-[11px] text-gray-500 font-normal mt-0.5">تسجيل اللطائف والفوائد التي استوقفتكِ اليوم.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -961,7 +918,7 @@
 
             <!-- OPTIONS -->
             <div class="pt-6 border-t border-roseGold-soft/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <button type="button" id="resetFormBtn" onclick="triggerReset()" class="text-xs text-gray-400 hover:text-burgundy transition-all">إفراغ حقول اليوم الحالي</button>
+                <button type="button" onclick="triggerReset()" class="text-xs text-gray-400 hover:text-burgundy transition-all">إفراغ حقول اليوم الحالي</button>
                 <div class="flex gap-2 w-full sm:w-auto">
                     <button type="button" onclick="copyReport()" class="flex-1 sm:flex-none bg-roseGold-dark hover:bg-roseGold-warm text-white px-6 py-3 rounded-full text-xs font-bold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 focus:outline-none flex items-center justify-center gap-2"><span>📋</span> نسخ تقرير اليوم الدافئ لإرساله</button>
                 </div>
@@ -1103,7 +1060,6 @@
         window.db = null; window.auth = null; window.appId = "mihrab-elbehga";
         window.selectedDate = new Date().toISOString().slice(0, 10);
         window.currentProgress = {}; window.currentRole = 'menna'; window.autoSaveTimeout = null;
-        window.isDataLoading = false; // Prevents auto-saves during document loads
 
         const defaultThoughts = [
             "\"إن الله يحب إذا عمل أحدكم عملاً أن يتقنه.\" خطوتكِ اليوم مهما بدت بسيطة، هي فخر وسعي يبارك الله فيه.",
@@ -1165,11 +1121,11 @@
                 window.currentProgress = snap.exists() ? snap.data() : {};
                 applyProgressToUI();
                 setTimeout(() => syncSpinner.classList.remove('fa-spin'), 600);
-            }, (err) => console.error(err));
+            });
 
             mUnsub = onSnapshot(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_messages', window.selectedDate), (snap) => {
                 window.customMessage = (snap.exists() && snap.data().message) ? snap.data().message : "";
-            }, (err) => console.error(err));
+            });
 
             cUnsub = onSnapshot(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_challenges', window.selectedDate), (snap) => {
                 const box = document.getElementById('anasChallengeBox');
@@ -1180,37 +1136,11 @@
                     box.classList.add('hidden');
                 }
                 updateTrackerVisuals();
-            }, (err) => console.error(err));
+            });
         }
 
-        // Check if selected date is locked (via flag or past deadline - 8:00 AM of next day)
-        window.isDayLocked = function(data) {
-            if (data && data.isLocked) return true;
-            
-            if (window.selectedDate) {
-                const selectedParts = window.selectedDate.split('-');
-                if (selectedParts.length === 3) {
-                    const year = parseInt(selectedParts[0], 10);
-                    const month = parseInt(selectedParts[1], 10) - 1;
-                    const day = parseInt(selectedParts[2], 10);
-                    
-                    // Deadline set at 8:00 AM on the calendar day after the selected date
-                    const limitDate = new Date(year, month, day + 1, 8, 0, 0, 0);
-                    const now = new Date();
-                    
-                    if (now > limitDate) {
-                        return true; // Autolock is active
-                    }
-                }
-            }
-            return false;
-        };
-
         window.applyProgressToUI = function() {
-            window.isDataLoading = true; // Block triggers during load
             const data = window.currentProgress;
-            const locked = window.isDayLocked(data);
-
             if (data.mood) {
                 const radio = document.querySelector(`input[name="mood"][value="${data.mood}"]`);
                 if (radio) radio.checked = true;
@@ -1234,7 +1164,7 @@
             document.getElementById('shatibiya_progress_notes').value = data.shatibiyaProgressNotes || '';
             document.getElementById('manahil_questions_notes').value = data.manahilQuestionsNotes || '';
 
-            // Apply Memory Session radio buttons safely
+            // Apply Memory Session radio buttons
             if (data.memorySession) {
                 const radioMorning = document.getElementById('memory_session_morning');
                 const radioEvening = document.getElementById('memory_session_evening');
@@ -1273,103 +1203,11 @@
 
             // Generate checklist mirror
             renderAdminChecklistMirror(data.tasks || {});
-
-            // LOCK STATE UI ADJUSTMENTS
-            const lockBanner = document.getElementById('lockBanner');
-            const lockedPercentageText = document.getElementById('lockedPercentageText');
-            const manualLockBtn = document.getElementById('manualLockBtn');
-            const resetFormBtn = document.getElementById('resetFormBtn');
-            const adminUnlockBtn = document.getElementById('adminUnlockBtn');
-
-            if (locked) {
-                // Show Locked State Banner & Freeze Percentage Display
-                lockBanner.classList.remove('hidden');
-                const frozenPercent = (data && typeof data.savedProgressPercentage !== 'undefined' && data.savedProgressPercentage !== null) ? data.savedProgressPercentage : window.calculateLivePercentage();
-                lockedPercentageText.innerText = frozenPercent + '%';
-                
-                document.getElementById('progressBar').style.width = frozenPercent + '%';
-                document.getElementById('progressText').innerText = frozenPercent + '%';
-
-                // Disable all controls for Menna to prevent accident modification
-                document.querySelectorAll('#trackerForm input, #trackerForm textarea, #trackerForm button').forEach(el => {
-                    if (el.id !== 'selectedDateInput') el.disabled = true;
-                });
-                if (manualLockBtn) manualLockBtn.disabled = true;
-                if (resetFormBtn) resetFormBtn.classList.add('hidden');
-
-                // Enable Secret admin override button for Anas only
-                if (window.currentRole === 'anas' && adminUnlockBtn) {
-                    adminUnlockBtn.classList.remove('hidden');
-                } else if (adminUnlockBtn) {
-                    adminUnlockBtn.classList.add('hidden');
-                }
-            } else {
-                // Unlock View & Re-enable Inputs
-                lockBanner.classList.add('hidden');
-                if (adminUnlockBtn) adminUnlockBtn.classList.add('hidden');
-                
-                document.querySelectorAll('#trackerForm input, #trackerForm textarea, #trackerForm button').forEach(el => {
-                    el.disabled = false;
-                });
-                if (manualLockBtn) manualLockBtn.disabled = false;
-                if (resetFormBtn) resetFormBtn.classList.remove('hidden');
-
-                // Live dynamic percentage recalculation
-                const livePercent = window.calculateLivePercentage();
-                document.getElementById('progressBar').style.width = livePercent + '%';
-                document.getElementById('progressText').innerText = livePercent + '%';
-            }
-
-            window.isDataLoading = false; // Loading finished safely
-        };
-
-        window.calculateLivePercentage = function() {
-            const checklistIds = [
-                'init_intentions', 'q_prayers', 'q_fajr', 'q_azkar_morning', 'q_azkar_evening',
-                'q_duha', 'q_sleep_mulk', 'q_quran', 'q_witr', 'read_raqaiq',
-                'read_sawa_kawa', 'sport_minimal', 'halal_recreation', 'dhikr_companion',
-                'heart_recharge_done', 'neutrality_done', 'duaa_done', 'sc_ward',
-                'sc_ashza', 'sc_monajid', 'sc_jazaa_segmented', 'metn_shatibiya',
-                'book_manahil', 'metn_others', 'course_meethaq', 'write_raqaiq_benefits',
-                'memory_interaction', 'memory_assignment_done'
-            ];
-            
-            let total = checklistIds.length;
-            let checked = 0;
-            
-            checklistIds.forEach(id => {
-                const el = document.getElementById(id);
-                if (el && el.checked) checked++;
-            });
-            
-            // Check dynamic challenge task
-            const challengeBox = document.getElementById('anasChallengeBox');
-            if (challengeBox && !challengeBox.classList.contains('hidden')) {
-                total += 1;
-                const challengeTask = document.getElementById('challenge_task');
-                if (challengeTask && challengeTask.checked) checked++;
-            }
-            
-            // Memory Session radio group (exclusive selection of Morning or Evening counts as 1 checklist item)
-            total += 1;
-            const morningRadio = document.getElementById('memory_session_morning');
-            const eveningRadio = document.getElementById('memory_session_evening');
-            if ((morningRadio && morningRadio.checked) || (eveningRadio && eveningRadio.checked)) {
-                checked++;
-            }
-            
-            return total > 0 ? Math.round((checked / total) * 100) : 0;
+            updateTrackerVisuals(); // LIVE Dynamic progress percentage!
         };
 
         window.triggerAutoSave = function() {
-            if (window.isDataLoading) return; // Guard: do not auto-save during firebase data bindings
-            if (window.isDayLocked(window.currentProgress)) return; // Prevent overwriting past frozen records
-
-            // Recalculate percentage live
-            const livePercentage = window.calculateLivePercentage();
-            document.getElementById('progressBar').style.width = livePercentage + '%';
-            document.getElementById('progressText').innerText = livePercentage + '%';
-
+            updateTrackerVisuals();
             const syncSpinner = document.getElementById('syncSpinner');
             syncSpinner.classList.add('fa-spin');
             if (window.autoSaveTimeout) clearTimeout(window.autoSaveTimeout);
@@ -1379,7 +1217,6 @@
                 document.querySelectorAll('.task-check').forEach(cb => { tasksObj[cb.id] = cb.checked; });
 
                 const data = {
-                    ...window.currentProgress,
                     date: window.selectedDate,
                     mood: document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️',
                     raqaiqNote: document.getElementById('raqaiq_note').value,
@@ -1404,8 +1241,7 @@
                     memoryAssignmentText: document.getElementById('memory_assignment_text').value,
                     memoryFeedbackText: document.getElementById('memory_feedback_text').value,
                     
-                    tasks: tasksObj,
-                    isLocked: false // Stays unlocked until manual action or time-limit
+                    tasks: tasksObj
                 };
                 window.currentProgress = data;
 
@@ -1418,58 +1254,6 @@
 
                 syncSpinner.classList.remove('fa-spin');
             }, 800);
-        };
-
-        // Manual Locking Action
-        window.lockCurrentDay = async function() {
-            const livePercentage = window.calculateLivePercentage();
-            const promptMsg = `هل أنتِ متأكدة من اعتماد وقفل إنجاز اليوم بنسبة ${livePercentage}%؟\n\nبعد القفل، سيتم تجميد هذه النسبة وحفظها سحابياً لحمايتها من أي تعديلات مستقبلية.`;
-            
-            if (confirm(promptMsg)) {
-                const tasksObj = {};
-                document.querySelectorAll('.task-check').forEach(cb => { tasksObj[cb.id] = cb.checked; });
-
-                const data = {
-                    ...window.currentProgress,
-                    isLocked: true,
-                    savedProgressPercentage: livePercentage,
-                    tasks: tasksObj
-                };
-                window.currentProgress = data;
-
-                if (window.db && window.auth && window.auth.currentUser) {
-                    try {
-                        await setDoc(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_progress', window.selectedDate), data, { merge: true });
-                        showToast(`تم قفل واعتماد هذا اليوم بنسبة ${livePercentage}% بنجاح! 🎉🔒`);
-                    } catch (e) {
-                        console.error(e);
-                        showToast("حدث خطأ أثناء حفظ القفل سحابياً.");
-                    }
-                }
-            }
-        };
-
-        // Master unlocking action by Anas
-        window.unlockCurrentDay = async function() {
-            if (confirm("هل أنت متأكد من إلغاء قفل هذا اليوم؟ سيتم السماح لـ منة بالتعديل وإعادة الحساب الحي للنسبة المئوية.")) {
-                const data = {
-                    ...window.currentProgress,
-                    isLocked: false
-                };
-                // Remove frozen statistics to trigger dynamic recalculation
-                delete data.savedProgressPercentage;
-                window.currentProgress = data;
-
-                if (window.db && window.auth && window.auth.currentUser) {
-                    try {
-                        await setDoc(doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_progress', window.selectedDate), data);
-                        showToast("تم فتح قفل هذا اليوم بنجاح! 🔓");
-                    } catch (e) {
-                        console.error(e);
-                        showToast("حدث خطأ أثناء إلغاء القفل سحابياً.");
-                    }
-                }
-            }
         };
 
         window.saveAdminSettings = async function() {
@@ -1492,7 +1276,6 @@
         };
 
         window.clearMemorySessionRadio = function() {
-            if (window.isDayLocked(window.currentProgress)) return;
             document.querySelectorAll('input[name="memory_session"]').forEach(radio => radio.checked = false);
             window.triggerAutoSave();
         };
@@ -1503,7 +1286,7 @@
 
             const schema = {
                 "الأوراد اليومية المباركة 🌿": [
-                    { id: 'init_intentions', label: 'استحضار نيات المحراب العلية🎯' },
+                    { id: 'init_intentions', label: 'استحضار نيات المحراب بالقلب 🎯' },
                     { id: 'q_prayers', label: 'الصلوات الخمس في أوقاتها 🕌' },
                     { id: 'q_fajr', label: 'ركعتا الفجر (السنة) 🌅' },
                     { id: 'q_azkar_morning', label: 'أذكار الصباح كاملة ☀️' },
@@ -1514,8 +1297,6 @@
                     { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
                 ],
                 "متابعة دورة الذاكرة 🧠": [
-                    { id: 'memory_session_morning', label: 'حضور مجلس الصباح 🌅' },
-                    { id: 'memory_session_evening', label: 'حضور مجلس المساء 🌌' },
                     { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
                     { id: 'memory_assignment_done', label: 'تم الانتهاء من التكليف بالكامل ✅' }
                 ],
@@ -1533,8 +1314,8 @@
                     { id: 'duaa_done', label: 'ورد الدعاء والنجوى بالعامية 🤲' }
                 ],
                 "الأذكار القصيرة والتهليلات (١٠٠ مرة) ✨": [
-                    { id: 'dh_short_1', label: 'تسبيح' }, { id: 'dh_short_2', label: 'تحميد' },
-                    { id: 'dh_short_3', label: 'تهليل' }, { id: 'dh_short_4', label: 'تكبير' },
+                    { id: 'dh_short_1', label: 'سبحان الله' }, { id: 'dh_short_2', label: 'الحمد لله' },
+                    { id: 'dh_short_3', label: 'لا إله إلا الله' }, { id: 'dh_short_4', label: 'الله أكبر' },
                     { id: 'dh_short_5', label: 'لا حول ولا قوة إلا بالله' }, { id: 'dh_short_6', label: 'سبحان الله وبحمده' },
                     { id: 'dh_short_7', label: 'أستغفر الله وأتوب إليه' }, { id: 'dh_short_8', label: 'اللهم صل وسلم على محمد' },
                     { id: 'dh_short_9', label: 'يا مقلب القلوب ثبت قلبي' }
@@ -1546,9 +1327,7 @@
                     { id: 'sc_jazaa_segmented', label: 'الجزاء التربوي (مقطع يومي مجزأ) 🌱' },
                     { id: 'metn_shatibiya', label: 'حفظ الشاطبية 📜' },
                     { id: 'book_manahil', label: 'مذاكرة أعذب المناهل 📖' },
-                    { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' },
-                    { id: 'course_meethaq', label: 'حضور دورة ميثاق 🤝' },
-                    { id: 'write_raqaiq_benefits', label: 'تدوين رقائق وفوائد ✍️' }
+                    { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' }
                 ]
             };
 
@@ -1597,7 +1376,13 @@
         }
 
         function updateTrackerVisuals() {
-            const percentage = window.calculateLivePercentage();
+            const checkboxes = document.querySelectorAll('.task-check');
+            let visibleCheckboxes = Array.from(checkboxes);
+            if (document.getElementById('anasChallengeBox').classList.contains('hidden')) {
+                visibleCheckboxes = visibleCheckboxes.filter(cb => cb.id !== 'challenge_task');
+            }
+            const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+            const percentage = visibleCheckboxes.length > 0 ? Math.round((checkedCount / visibleCheckboxes.length) * 100) : 0;
             document.getElementById('progressBar').style.width = percentage + '%';
             document.getElementById('progressText').innerText = percentage + '%';
         }
@@ -1647,7 +1432,7 @@
             window.currentRole = role;
             document.getElementById('trackerForm').classList.toggle('hidden', role === 'anas');
             document.getElementById('anasControlRoom').classList.toggle('hidden', role !== 'anas');
-            if (window.applyProgressToUI) window.applyProgressToUI();
+            if (role === 'anas' && window.applyProgressToUI) window.applyProgressToUI();
         }
         setTimeout(checkAndActivateAdminRole, 500);
 
@@ -1687,8 +1472,6 @@
                 'challenge_task': 'المهمة التشجيعية لليوم🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
                 'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'sc_jazaa_segmented': 'مقطع الجزاء التربوي المجزأ🌱',
                 'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
-                'course_meethaq': 'حضور دورة ميثاق 🤝', 'write_raqaiq_benefits': 'تدوين رقائق وفوائد ✍️',
-                'memory_session_morning': 'حضور مجلس الصباح 🌅', 'memory_session_evening': 'حضور مجلس المساء 🌌',
                 'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅',
                 'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
             };
