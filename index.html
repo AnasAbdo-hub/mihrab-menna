@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -430,7 +429,7 @@
                             </div>
                         </div>
                         <div class="mt-3">
-                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم؟</span>
+                            <span class="text-[11px] text-roseGold-dark font-bold">🔍 وصلتي لفين وتدبرتي إيه اليوم?</span>
                             <textarea id="q_quran_progress" rows="2" placeholder="اكتبي السورة والآيات التي تم سماعها وتدبرها اليوم..." class="mt-1 w-full bg-roseGold-light/30 rounded-lg p-2 text-xs focus:ring-1 focus:ring-roseGold focus:outline-none placeholder-gray-400 border border-transparent focus:border-roseGold"></textarea>
                         </div>
                     </div>
@@ -909,6 +908,28 @@
                                 </div>
                             </label>
                         </div>
+
+                        <!-- دورة ميثاق -->
+                        <div class="bg-roseGold-light/20 p-4 rounded-xl border border-roseGold-soft flex items-start gap-3">
+                            <input type="checkbox" id="course_meethaq" class="custom-checkbox task-check mt-1">
+                            <div>
+                                <label for="course_meethaq" class="font-bold text-sm text-burgundy cursor-pointer flex items-center gap-2">
+                                    <span>🤝</span> حضور دورة ميثاق
+                                </label>
+                                <p class="text-[11px] text-gray-500 font-normal mt-0.5">الاستماع للمجلس والتفاعل المنهجي مع الدورة.</p>
+                            </div>
+                        </div>
+
+                        <!-- تدوين رقائق وفوائد -->
+                        <div class="bg-roseGold-light/20 p-4 rounded-xl border border-roseGold-soft flex items-start gap-3">
+                            <input type="checkbox" id="write_raqaiq_benefits" class="custom-checkbox task-check mt-1">
+                            <div>
+                                <label for="write_raqaiq_benefits" class="font-bold text-sm text-burgundy cursor-pointer flex items-center gap-2">
+                                    <span>✍️</span> تدوين رقائق وفوائد
+                                </label>
+                                <p class="text-[11px] text-gray-500 font-normal mt-0.5">تسجيل اللطائف والفوائد التي استوقفتكِ اليوم.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1309,7 +1330,8 @@
                 'read_sawa_kawa', 'sport_minimal', 'halal_recreation', 'dhikr_companion',
                 'heart_recharge_done', 'neutrality_done', 'duaa_done', 'sc_ward',
                 'sc_ashza', 'sc_monajid', 'sc_jazaa_segmented', 'metn_shatibiya',
-                'book_manahil', 'metn_others', 'memory_interaction', 'memory_assignment_done'
+                'book_manahil', 'metn_others', 'course_meethaq', 'write_raqaiq_benefits',
+                'memory_interaction', 'memory_assignment_done'
             ];
             
             let total = checklistIds.length;
@@ -1481,7 +1503,7 @@
 
             const schema = {
                 "الأوراد اليومية المباركة 🌿": [
-                    { id: 'init_intentions', label: 'استحضار نيات المحراب بالقلب 🎯' },
+                    { id: 'init_intentions', label: 'استحضار نيات المحراب العلية🎯' },
                     { id: 'q_prayers', label: 'الصلوات الخمس في أوقاتها 🕌' },
                     { id: 'q_fajr', label: 'ركعتا الفجر (السنة) 🌅' },
                     { id: 'q_azkar_morning', label: 'أذكار الصباح كاملة ☀️' },
@@ -1511,8 +1533,8 @@
                     { id: 'duaa_done', label: 'ورد الدعاء والنجوى بالعامية 🤲' }
                 ],
                 "الأذكار القصيرة والتهليلات (١٠٠ مرة) ✨": [
-                    { id: 'dh_short_1', label: 'سبحان الله' }, { id: 'dh_short_2', label: 'الحمد لله' },
-                    { id: 'dh_short_3', label: 'لا إله إلا الله' }, { id: 'dh_short_4', label: 'الله أكبر' },
+                    { id: 'dh_short_1', label: 'تسبيح' }, { id: 'dh_short_2', label: 'تحميد' },
+                    { id: 'dh_short_3', label: 'تهليل' }, { id: 'dh_short_4', label: 'تكبير' },
                     { id: 'dh_short_5', label: 'لا حول ولا قوة إلا بالله' }, { id: 'dh_short_6', label: 'سبحان الله وبحمده' },
                     { id: 'dh_short_7', label: 'أستغفر الله وأتوب إليه' }, { id: 'dh_short_8', label: 'اللهم صل وسلم على محمد' },
                     { id: 'dh_short_9', label: 'يا مقلب القلوب ثبت قلبي' }
@@ -1524,7 +1546,9 @@
                     { id: 'sc_jazaa_segmented', label: 'الجزاء التربوي (مقطع يومي مجزأ) 🌱' },
                     { id: 'metn_shatibiya', label: 'حفظ الشاطبية 📜' },
                     { id: 'book_manahil', label: 'مذاكرة أعذب المناهل 📖' },
-                    { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' }
+                    { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' },
+                    { id: 'course_meethaq', label: 'حضور دورة ميثاق 🤝' },
+                    { id: 'write_raqaiq_benefits', label: 'تدوين رقائق وفوائد ✍️' }
                 ]
             };
 
@@ -1663,6 +1687,7 @@
                 'challenge_task': 'المهمة التشجيعية لليوم🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
                 'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'sc_jazaa_segmented': 'مقطع الجزاء التربوي المجزأ🌱',
                 'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
+                'course_meethaq': 'حضور دورة ميثاق 🤝', 'write_raqaiq_benefits': 'تدوين رقائق وفوائد ✍️',
                 'memory_session_morning': 'حضور مجلس الصباح 🌅', 'memory_session_evening': 'حضور مجلس المساء 🌌',
                 'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅',
                 'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
@@ -1684,5 +1709,3 @@
     </script>
 </body>
 </html>
-
-```
