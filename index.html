@@ -50,26 +50,31 @@
     </script>
     <style>
         body {
-            background-color: #FAF6F0;
+            background-color: #2b1115; /* خلفية ملكية دافئة */
+            /* زخرفة مذهبة إسلامية متداخلة مع وهج زمردي روحي خفيف لتصميم أرضية مذهل */
             background-image: 
-                radial-gradient(circle at 100% 150%, #FFF0EE 24%, white 24%, white 28%, #FFF0EE 28%, #FFF0EE 36%, transparent 36%),
-                radial-gradient(circle at 0% 150%, #FFF0EE 24%, white 24%, white 28%, #FFF0EE 28%, #FFF0EE 36%, transparent 36%);
-            background-size: 100px 180px;
+                radial-gradient(circle at 50% 30%, rgba(170, 124, 17, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 10% 80%, rgba(74, 21, 27, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(44, 85, 60, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 100% 150%, #FAF0ED 1%, transparent 2%),
+                radial-gradient(circle at 0% 150%, #FAF0ED 1%, transparent 2%);
+            background-size: 100% 100%, 100% 100%, 100% 100%, 80px 140px, 80px 140px;
             background-attachment: fixed;
         }
 
         /* Deluxe Double Ornate Border Style */
         .ornate-border {
-            border: 3px double #D4A373;
+            border: 4px double #D4AF37;
             position: relative;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15);
         }
         .ornate-border::before {
             content: '';
             position: absolute;
-            top: 6px;
-            left: 6px;
-            right: 6px;
-            bottom: 6px;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
             border: 1px solid #E8A39E;
             pointer-events: none;
             border-radius: inherit;
@@ -152,15 +157,15 @@
 
         /* Glassmorphism Cards */
         .luxury-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 163, 115, 0.25);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 163, 115, 0.3);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         .luxury-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(154, 107, 86, 0.12);
-            border-color: rgba(212, 163, 115, 0.6);
+            box-shadow: 0 16px 30px rgba(74, 21, 27, 0.15);
+            border-color: rgba(212, 163, 115, 0.7);
         }
 
         /* Custom Scrollbar */
@@ -175,33 +180,146 @@
             border-radius: 10px;
         }
 
-        /* Flying Flower Petals Animation */
-        @keyframes drift {
-            0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-        }
-        .petal {
+        /* Confetti / Celebration Spawns */
+        .celebration-item {
             position: fixed;
-            top: -10px;
+            top: -50px;
             pointer-events: none;
-            z-index: 999;
-            animation: drift linear infinite;
+            z-index: 9999;
+            user-select: none;
+            will-change: transform, opacity;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-50px) translateX(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(105vh) translateX(var(--drift-x, 100px)) rotate(var(--rotation, 360deg)) scale(var(--scale, 1.1));
+                opacity: 0;
+            }
+        }
+
+        /* Shimmer Animation for the Holy Poem */
+        @keyframes golden-shimmer {
+            0% { background-position: 200% center; }
+            100% { background-position: -200% center; }
+        }
+        .shimmer-text {
+            background: linear-gradient(90deg, #4A151B 0%, #AA7C11 25%, #D4AF37 50%, #AA7C11 75%, #4A151B 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: golden-shimmer 4s linear infinite;
         }
     </style>
 </head>
-<body class="min-h-screen py-8 px-4 text-cozyDark font-sans">
+<body class="min-h-screen py-8 px-2 md:px-4 text-cozyDark font-sans">
 
-    <!-- Ambient Floating Petals Container -->
-    <div id="petal-container"></div>
+    <!-- Celebration Falling Canvas/Container -->
+    <div id="celebration-container" class="fixed inset-0 pointer-events-none overflow-hidden z-[9999]"></div>
 
     <!-- Main Outer Container -->
-    <div class="max-w-4xl mx-auto bg-white/95 rounded-[2.5rem] shadow-2xl ornate-border overflow-hidden">
+    <div class="max-w-4xl mx-auto bg-white/98 rounded-[2.5rem] shadow-2xl ornate-border overflow-hidden">
         
+        <!-- SPECIAL QURAN KHATMAH CORONATION BANNER -->
+        <div class="relative bg-gradient-to-b from-amber-50 via-roseGold-light to-white p-6 md:p-10 text-center border-b-2 border-gold/40">
+            <!-- Decorative Corners -->
+            <div class="absolute top-4 right-4 text-gold text-2xl animate-pulse"><i class="fa-solid fa-star"></i></div>
+            <div class="absolute top-4 left-4 text-gold text-2xl animate-pulse"><i class="fa-solid fa-star"></i></div>
+            
+            <!-- Glowing Crown of Dignity Symbol -->
+            <div class="inline-flex items-center justify-center bg-gradient-to-br from-gold-light via-gold to-gold-dark p-6 rounded-full shadow-2xl mb-4 relative hover:scale-115 transition-transform duration-500 cursor-pointer" onclick="playSpiritualSound()" title="اضغط لسماع صدورة النفحة الروحية">
+                <span class="text-4xl md:text-5xl filter drop-shadow">👑</span>
+                <span class="absolute -bottom-1 -right-1 text-2xl animate-bounce">📖</span>
+                <!-- Pulse Glow Ring -->
+                <div class="absolute inset-0 rounded-full border-4 border-gold animate-ping opacity-25"></div>
+            </div>
+
+            <p class="font-serif italic text-gold-dark tracking-[0.2em] text-sm mb-1 uppercase font-bold">تاجُ الموقرين وحفَظةِ كتابِ الله</p>
+            <h2 class="font-serif text-2xl md:text-4xl text-burgundy font-bold mb-3 tracking-wide">اِحْتِفَالِيَّةُ خَتْمَةِ المُرَاجَعَةِ الأُولَى 🕊️</h2>
+            <p class="text-xs md:text-sm text-roseGold-dark max-w-xl mx-auto font-sans leading-relaxed">
+                بفضلِ الله ومَنّه وعونِهِ وحده، تمَّت أوّلُ ختمةِ مراجعةٍ كاملةٍ للقرآن الكريم منذُ تأسيس المحراب المبارك. ألبسكِ الله بها تاجَ الوقار ورفعَ بها درجتكِ في جناتِ النعيم يا مِنة الله 🌸.
+            </p>
+
+            <!-- THE MAJESTIC ARABIC POEM SECTION (Split Hemistichs Form) -->
+            <div class="mt-6 max-w-3xl mx-auto bg-gradient-to-r from-amber-50/50 via-white to-amber-50/50 p-6 rounded-[2rem] border border-gold/50 shadow-lg relative overflow-hidden">
+                <div class="absolute -top-12 -right-12 text-gold-light/10 text-8xl pointer-events-none"><i class="fa-solid fa-feather"></i></div>
+                
+                <h3 class="font-serif text-lg md:text-xl font-bold text-burgundy mb-4 flex items-center justify-center gap-2">
+                    <span class="text-xl">✨</span> نَفَحات مِهرَجَان الوَقارِ لآلِ القُرآن <span class="text-xl">✨</span>
+                </h3>
+
+                <!-- Responsive Arabic Poem Grid Structure -->
+                <div class="space-y-3 font-serif text-sm md:text-base text-burgundy/90 max-w-2xl mx-auto">
+                    <!-- Line 1 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">أكرم بقوم أكرموا القرآنا</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">وهبوا له الأرواح والأبدانا</div>
+                    </div>
+                    <!-- Line 2 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">قوم قد اختار الإله قلوبهم</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">لتصير من غرس الهدى بستانا</div>
+                    </div>
+                    <!-- Line 3 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">زرعت حروف النور بين شفاههم</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">فتضوعت مسكا يفيض بيانا</div>
+                    </div>
+                    <!-- Line 4 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">رفعوا كتاب الله فوق رؤوسهم</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">ليكون نورا في الظلام فكانا</div>
+                    </div>
+                    <!-- Line 5 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">سبحان من وهب الأجور لأهلها</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">وهدى القلوب وعلم الإنسانا</div>
+                    </div>
+                    <!-- Line 6 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">يا رب اكرم من يعيش حياته</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">لكتابك الوضاء لا يتواني</div>
+                    </div>
+                    <!-- Line 7 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">يا منزل الوحي المبين تفضلا</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">ندعوك فاقبل يا كريم دعانا</div>
+                    </div>
+                    <!-- Line 8 -->
+                    <div class="grid grid-cols-11 gap-1 items-center py-1 border-t border-roseGold-soft/10">
+                        <div class="col-span-5 text-center md:text-right font-bold tracking-wide">اجعل كتابك بيننا نورا لنا</div>
+                        <div class="col-span-1 text-center text-gold text-xs">💎</div>
+                        <div class="col-span-5 text-center md:text-left font-bold tracking-wide">أصلح به ما ساء من دنيانا</div>
+                    </div>
+                </div>
+
+                <div class="h-[1px] w-1/3 bg-gold mx-auto my-4"></div>
+                <button type="button" onclick="triggerIntenseCelebration()" class="text-xs text-roseGold-dark hover:text-burgundy bg-gold/10 hover:bg-gold/20 font-bold px-4 py-1.5 rounded-full transition-all flex items-center justify-center gap-1.5 mx-auto">
+                    <span>🎉</span> انثر النور والسرور في الأرجاء
+                </button>
+            </div>
+        </div>
+
         <!-- HEADER: Mihrab and Quote -->
-        <div class="relative bg-gradient-to-b from-roseGold-light to-white pt-12 pb-8 px-6 md:px-12 text-center border-b border-roseGold-soft/30">
-            <!-- Elegant Corner Elements & Secret Settings Button -->
+        <div class="relative bg-gradient-to-b from-white to-[#FAF6F0] pt-8 pb-8 px-6 md:px-12 text-center border-b border-roseGold-soft/30">
+            <!-- Secret Settings Button -->
             <button type="button" onclick="openSettingsModal()" class="absolute top-6 right-6 text-roseGold-dark/60 hover:text-burgundy text-2xl transition-all" title="لوحة التنسيق والدعم">
                 <i class="fa-solid fa-cog"></i>
             </button>
@@ -280,7 +398,7 @@
             <div class="luxury-card rounded-2xl p-6 border border-roseGold-soft/40 relative overflow-hidden">
                 <div class="absolute -top-8 -left-8 text-roseGold-light opacity-30 text-7xl"><i class="fa-solid fa-heart"></i></div>
                 <h3 class="font-serif text-xl text-burgundy mb-4 flex items-center gap-3">
-                    <span class="text-2xl">💫</span> كيف يبدو نبض يومكِ اليوم أيتها المنة?
+                    <span class="text-2xl">💫</span> كيف يبدو نبض يومكِ اليوم أيتها المنة؟
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
                     <label class="cursor-pointer">
@@ -332,7 +450,7 @@
                     <span class="text-3xl">🌿</span>
                     <div>
                         <h3 class="font-serif text-2xl text-burgundy font-bold">أولاً: الأوراد والسنن اليومية (أساس البركة)</h3>
-                        <p class="text-xs text-roseGold-dark mt-0.5">أسلوب lifestyle يفيض طهرًا ونورًا في الحل والترحال</p>
+                        <p class="text-xs text-roseGold-dark mt-0.5">أسلوب حياة يفيض طهرًا ونورًا في الحل والترحال</p>
                     </div>
                 </div>
 
@@ -417,7 +535,7 @@
                         <input type="checkbox" id="q_witr" class="custom-checkbox task-check mt-1">
                         <div>
                             <label for="q_witr" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
-                                <span>🌃</span> ركعة الوتر الشافية
+                                <span>🌌</span> ركعة الوتر الشافية
                             </label>
                             <p class="text-xs text-gray-500 mt-1">نهاية اليوم المطمئنة (وإن تيسر قيام ليل فخير عظيم ونور بركة).</p>
                         </div>
@@ -603,7 +721,7 @@
                     </div>
                     <!-- Small Text Input for Selected Dhikr -->
                     <div class="pt-2 border-t border-blush-soft/40">
-                        <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم?</label>
+                        <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم؟</label>
                         <input type="text" id="dhikr_companion_text" placeholder="مثال: الاستغفار، الحوقلة، الصلاة على النبي، سبحان الله وبحمده..." class="w-full bg-white rounded-lg p-2.5 text-xs border border-blush-soft focus:outline-none focus:border-roseGold transition-all">
                     </div>
                 </div>
@@ -1096,6 +1214,9 @@
         window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('selectedDateInput').value = window.selectedDate;
             setupDateListener(); tryInitFirebase(); updateTrackerVisuals();
+            // Start the celebration loop automatically on load to surprise Menna!
+            triggerIntenseCelebration();
+            playSpiritualSound();
         });
 
         window.tryInitFirebase = function() {
@@ -1386,7 +1507,7 @@
                     { id: 'q_duha', label: 'ركعتا الضحى المباركة 🌤️' },
                     { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك والكافرون 🌌' },
                     { id: 'q_quran', label: 'الورد القرآني والتدبر 📖' },
-                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌃' }
+                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
                 ],
                 "متابعة دورة الذاكرة 🧠": [
                     { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
@@ -1477,6 +1598,68 @@
             const percentage = visibleCheckboxes.length > 0 ? Math.round((checkedCount / visibleCheckboxes.length) * 100) : 0;
             document.getElementById('progressBar').style.width = percentage + '%';
             document.getElementById('progressText').innerText = percentage + '%';
+        }
+
+        // 🌟 دالة تفاعلية لإطلاق زخات نفحات التكريم من فوق لتحت (تيجان، نجوم، مصاحف، أوراد)
+        function triggerIntenseCelebration() {
+            const container = document.getElementById('celebration-container');
+            if (!container) return;
+
+            const itemsList = [
+                '👑', '✨', '📖', '🌸', '🌟', '🌹', '🕊️', '🌿', '💎', '♥'
+            ];
+
+            // إطلاق حزمة مركزة من العناصر الطائرة بمجرد نقر الزر أو التحميل
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    const item = document.createElement('div');
+                    item.className = 'celebration-item font-sans text-xl md:text-2xl';
+                    item.innerText = itemsList[Math.floor(Math.random() * itemsList.length)];
+                    
+                    // حساب المتغيرات لكل عنصر لإيجاد حركة طبيعية خلابة
+                    item.style.left = Math.random() * 100 + 'vw';
+                    item.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                    item.style.animationDelay = (Math.random() * 0.5) + 's';
+                    item.style.setProperty('--drift-x', (Math.random() * 200 - 100) + 'px');
+                    item.style.setProperty('--rotation', (Math.random() * 720 - 360) + 'deg');
+                    item.style.setProperty('--scale', Math.random() * 0.7 + 0.8);
+                    
+                    container.appendChild(item);
+                    setTimeout(() => item.remove(), 8000);
+                }, i * 150);
+            }
+        }
+
+        // 🔔 دالة عزف الصدى الروحي باستخدام متصفح الويب (Web Audio API Synthesizer)
+        function playSpiritualSound() {
+            try {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContext) return;
+                const ctx = new AudioContext();
+                
+                // النغمات تتابع لتمثيل صعود روحي مبارك (أصوات ملائكية)
+                const melody = [523.25, 659.25, 783.99, 987.77, 1046.50]; // C5, E5, G5, B5, C6
+                melody.forEach((freq, index) => {
+                    const time = ctx.currentTime + (index * 0.25);
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(freq, time);
+                    
+                    // تحسين التلاشي والصوت ليصبح ناعماً جداً ومرتفع الصدى
+                    gain.gain.setValueAtTime(0, time);
+                    gain.gain.linearRampToValueAtTime(0.12, time + 0.05);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, time + 1.2);
+                    
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start(time);
+                    osc.stop(time + 1.5);
+                });
+            } catch (e) {
+                console.log("Web Audio not allowed or failed to init: ", e);
+            }
         }
 
         function createPetal() {
