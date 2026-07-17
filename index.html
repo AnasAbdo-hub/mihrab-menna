@@ -280,7 +280,7 @@
             <div class="luxury-card rounded-2xl p-6 border border-roseGold-soft/40 relative overflow-hidden">
                 <div class="absolute -top-8 -left-8 text-roseGold-light opacity-30 text-7xl"><i class="fa-solid fa-heart"></i></div>
                 <h3 class="font-serif text-xl text-burgundy mb-4 flex items-center gap-3">
-                    <span class="text-2xl">💫</span> كيف يبدو نبض يومكِ اليوم أيتها المنة؟
+                    <span class="text-2xl">💫</span> كيف يبدو نبض يومكِ اليوم أيتها المنة?
                 </h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
                     <label class="cursor-pointer">
@@ -332,7 +332,7 @@
                     <span class="text-3xl">🌿</span>
                     <div>
                         <h3 class="font-serif text-2xl text-burgundy font-bold">أولاً: الأوراد والسنن اليومية (أساس البركة)</h3>
-                        <p class="text-xs text-roseGold-dark mt-0.5">أسلوب حياة يفيض طهرًا ونورًا في الحل والترحال</p>
+                        <p class="text-xs text-roseGold-dark mt-0.5">أسلوب lifestyle يفيض طهرًا ونورًا في الحل والترحال</p>
                     </div>
                 </div>
 
@@ -417,7 +417,7 @@
                         <input type="checkbox" id="q_witr" class="custom-checkbox task-check mt-1">
                         <div>
                             <label for="q_witr" class="font-bold text-burgundy cursor-pointer flex items-center gap-2">
-                                <span>🌌</span> ركعة الوتر الشافية
+                                <span>🌃</span> ركعة الوتر الشافية
                             </label>
                             <p class="text-xs text-gray-500 mt-1">نهاية اليوم المطمئنة (وإن تيسر قيام ليل فخير عظيم ونور بركة).</p>
                         </div>
@@ -603,7 +603,7 @@
                     </div>
                     <!-- Small Text Input for Selected Dhikr -->
                     <div class="pt-2 border-t border-blush-soft/40">
-                        <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم؟</label>
+                        <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم?</label>
                         <input type="text" id="dhikr_companion_text" placeholder="مثال: الاستغفار، الحوقلة، الصلاة على النبي، سبحان الله وبحمده..." class="w-full bg-white rounded-lg p-2.5 text-xs border border-blush-soft focus:outline-none focus:border-roseGold transition-all">
                     </div>
                 </div>
@@ -940,7 +940,29 @@
                     <input type="text" id="admin_challenge_input" placeholder="مثال: نعد شاي بنعناع ونسمع تلاوة هادئة..." class="w-full bg-roseGold-light/30 rounded-xl p-3 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold transition-all"></textarea>
                 </div>
                 <button onclick="saveAdminSettings()" class="w-full bg-burgundy text-white py-3 rounded-full text-xs font-bold hover:bg-black transition-all">حفظ وإرسال التعديل سحابياً ✨</button>
+            
+                <!-- J جناح حصاد وتصدير البيانات المخصص للفترات الحرّة -->
+                <div class="mt-6 p-5 bg-amber-50/60 border border-roseGold rounded-2xl space-y-3 shadow-inner">
+                    <h4 class="text-xs font-bold text-burgundy flex items-center gap-1.5">
+                        <span>📦</span> حاصد ومصدّر البيانات الخام للفترات المخصصة:
+                    </h4>
+                    <p class="text-[10px] text-gray-500 leading-relaxed">اختر نطاق التاريخ بحرية كاملة، وسيقوم النظام بسحب كافة الحقول والتدوينات (القديمة والحديثة) وحفظها فوراً في ملف نصي متقن.</p>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-[9px] font-bold text-roseGold-dark mb-1">من تاريخ:</label>
+                            <input type="date" id="extractFromDate" class="w-full bg-white rounded-lg p-2 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold font-bold text-burgundy">
+                        </div>
+                        <div>
+                            <label class="block text-[9px] font-bold text-roseGold-dark mb-1">إلى تاريخ:</label>
+                            <input type="date" id="extractToDate" class="w-full bg-white rounded-lg p-2 text-xs border border-roseGold-soft focus:outline-none focus:border-roseGold font-bold text-burgundy">
+                        </div>
+                    </div>
+                    <button type="button" onclick="downloadRawRangeData()" class="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white py-2.5 rounded-full text-xs font-bold hover:from-burgundy hover:to-burgundy transition-all shadow-md flex items-center justify-center gap-2">
+                        <span>💾</span> استخراج وحفظ حزمة الفترة في ملف (.txt)
+                    </button>
+                </div>
             </div>
+            
             <div class="bg-roseGold-light/20 p-5 rounded-2xl border border-roseGold-soft space-y-3">
                 <h4 class="font-bold text-sm text-burgundy border-b border-roseGold-soft pb-2">👁️ مراقبة سعي منة الحالي:</h4>
                 <div class="space-y-2 text-xs">
@@ -1062,7 +1084,7 @@
         window.currentProgress = {}; window.currentRole = 'menna'; window.autoSaveTimeout = null;
 
         const defaultThoughts = [
-            "\"إن الله يحب إذا عمل أحدكم عملاً أن يتقنه.\" خطوتكِ اليوم مهما بدت بسيطة، هي فخر وسعي يبارك الله فيه.",
+            "\"إن الله يحب إذا عمل أحدكم عملًا أن يتقنه.\" خطوتكِ اليوم مهما بدت بسيطة، هي فخر وسعي يبارك الله فيه.",
             "يا منة الله: لا تنسي أن ترأفي بنفسك، وتذكري أن إنجاز قلبك الصادق لا يُقاس بالأرقام بل بصدق السعي والنية الطيبّة.",
             "\"الحمد لله الذي بنعمته تتم الصالحات.\" كوني ممتنة لتفاصيل يومك، ففي كل دقيقة فرصة متجددة للارتقاء والخير.",
             "جعل الله خطاكِ خفيفة ومستبشرة اليوم، وطهر قلبكِ بنوره وجعلكِ زهرة تنثر العلم والمودة أينما حطّت رِحالها.",
@@ -1203,7 +1225,7 @@
 
             // Generate checklist mirror
             renderAdminChecklistMirror(data.tasks || {});
-            updateTrackerVisuals(); // LIVE Dynamic progress percentage!
+            updateTrackerVisuals();
         };
 
         window.triggerAutoSave = function() {
@@ -1280,6 +1302,76 @@
             window.triggerAutoSave();
         };
 
+        // 🛠️ دالة تصدير داتا النطاق الحر لملف نصي (.txt) بأعلى احترافية ونزاهة بيانية
+        window.downloadRawRangeData = async function() {
+            if (!window.db) { showToast("قاعدة البيانات السحابية غير متصلة!"); return; }
+            
+            const fromStr = document.getElementById('extractFromDate').value;
+            const toStr = document.getElementById('extractToDate').value;
+            
+            if (!fromStr || !toStr) {
+                showToast("من فضلك حدد تاريخ البداية والنهاية أولاً! 📅");
+                return;
+            }
+            
+            const fromDate = new Date(fromStr);
+            const toDate = new Date(toStr);
+            
+            if (fromDate > toDate) {
+                showToast("عفوًا! تاريخ البداية لا يمكن أن يكون بعد تاريخ النهاية.");
+                return;
+            }
+            
+            showToast("جاري جمع حزمة البيانات وحصاد المدونات... ⏳");
+            
+            const { getDoc } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js");
+            
+            let datesArray = [];
+            let currentDate = new Date(fromDate);
+            while (currentDate <= toDate) {
+                datesArray.push(currentDate.toISOString().slice(0, 10));
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            let extractedBundle = {};
+            const syncSpinner = document.getElementById('syncSpinner');
+            if(syncSpinner) syncSpinner.classList.add('fa-spin');
+            
+            for (let dateStr of datesArray) {
+                try {
+                    const docRef = doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_progress', dateStr);
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        // سحب الداتا كاملة بنزاهة تامة دون تفويت أي فيلد قديم تم حذفه
+                        extractedBundle[dateStr] = docSnap.data();
+                    } else {
+                        extractedBundle[dateStr] = { empty: true, date: dateStr };
+                    }
+                } catch(e) {
+                    console.error("خطأ في جلب بيانات تاريخ: " + dateStr, e);
+                }
+            }
+            
+            if(syncSpinner) syncSpinner.classList.remove('fa-spin');
+            
+            // تحويل الحزمة النصية بالكامل لـ JSON مرتب بمسافات بادئة مريحة للقراءة والـ AI
+            const fileContent = JSON.stringify(extractedBundle, null, 2);
+            
+            // إنشاء كائن الملف النصي وتدشين عملية التحميل التلقائي فوراً
+            const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = url;
+            downloadLink.download = `Mihrab_Raw_Harvest_${fromStr}_to_${toStr}.txt`;
+            
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(url);
+            
+            showToast("تم سحب الفترة وتحميل ملف الـ .txt بنجاح! 🌸💾");
+        };
+
         function renderAdminChecklistMirror(tasks) {
             const mirrorContainer = document.getElementById('admin_full_checklist_mirror');
             if(!mirrorContainer) return;
@@ -1294,7 +1386,7 @@
                     { id: 'q_duha', label: 'ركعتا الضحى المباركة 🌤️' },
                     { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك والكافرون 🌌' },
                     { id: 'q_quran', label: 'الورد القرآني والتدبر 📖' },
-                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
+                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌃' }
                 ],
                 "متابعة دورة الذاكرة 🧠": [
                     { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
@@ -1432,7 +1524,19 @@
             window.currentRole = role;
             document.getElementById('trackerForm').classList.toggle('hidden', role === 'anas');
             document.getElementById('anasControlRoom').classList.toggle('hidden', role !== 'anas');
-            if (role === 'anas' && window.applyProgressToUI) window.applyProgressToUI();
+            if (role === 'anas') {
+                if (window.applyProgressToUI) window.applyProgressToUI();
+                
+                // تلقيم تلقائي بتواريخ آخر أسبوع لتوفير المجهود
+                const fromInput = document.getElementById('extractFromDate');
+                const toInput = document.getElementById('extractToDate');
+                if (fromInput && toInput && !toInput.value) {
+                    toInput.value = window.selectedDate;
+                    let lastWeek = new Date(window.selectedDate);
+                    lastWeek.setDate(lastWeek.getDate() - 6);
+                    fromInput.value = lastWeek.toISOString().slice(0, 10);
+                }
+            }
         }
         setTimeout(checkAndActivateAdminRole, 500);
 
