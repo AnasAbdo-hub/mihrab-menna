@@ -269,6 +269,7 @@
             <button type="button" onclick="switchRole('menna')" class="bg-white/10 hover:bg-white/20 px-3 py-1 rounded-full transition-all">رؤية المحراب كـ منة</button>
         </div>
 
+        <!-- FORM START -->
         <form id="trackerForm" class="p-6 md:p-10 space-y-10" oninput="triggerAutoSave()">
             
             <!-- INTENTIONS CHECKPOINT -->
@@ -364,7 +365,6 @@
                     </div>
                 </div>
             </div>
-
 
             <!-- SECTION 2: THE QUINTET -->
             <div class="space-y-6">
@@ -540,7 +540,7 @@
                     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
                         <div>
                             <span class="text-sm font-bold text-burgundy">🌟 الذكر الملازم اليومي:</span>
-                            <p class="text-xs text-gray-500">يتردد على اللسان طيلة اليوم (أثناء المشي، ترتيب البيت، الطبخ, الفراغ).</p>
+                            <p class="text-xs text-gray-500">يتردد على اللسان طيلة اليوم (أثناء المشي، ترتيب البيت، الطبخ، الفراغ).</p>
                         </div>
                         <div class="flex items-center gap-2">
                             <input type="checkbox" id="dhikr_companion" class="custom-checkbox task-check">
@@ -550,7 +550,7 @@
                     <!-- Small Text Input for Selected Dhikr -->
                     <div class="pt-2 border-t border-blush-soft/40">
                         <label for="dhikr_companion_text" class="block text-xs font-bold text-roseGold-dark mb-1">✍️ ما هو الذكر المختار الذي فضّلتِ ملازمته اليوم؟</label>
-                        <input type="text" id="dhikr_companion_text" placeholder="مثال: الاستغفار، الحوقلة، الصلاة على النبي، سبحان الله وبحمده..." class="w-full bg-white rounded-lg p-2.5 text-xs border border-blush-soft focus:outline-none focus:border-roseGold transition-all">
+                        <input type="text" id="dhikr_companion_text" placeholder="مثال: الاستغفار، الحوقلة، الصلاة على النبي, سبحان الله وبحمده..." class="w-full bg-white rounded-lg p-2.5 text-xs border border-blush-soft focus:outline-none focus:border-roseGold transition-all">
                     </div>
                 </div>
 
@@ -600,28 +600,28 @@
                             <input type="checkbox" id="dh_short_6" class="tasbeeh-checkbox task-check">
                             <div class="text-xs text-burgundy leading-tight">
                                 <span class="font-bold block">سبحان الله وبحمده</span>
-                                <span class="text-[10px] text-gray-400">سبحان الله العظيم (١٠0)</span>
+                                <span class="text-[10px] text-gray-400">سبحان الله العظيم (١٠٠)</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_7" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">أستغفر الله وأتوب إليه</span>
-                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_8" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">اللهم صل وسلم على نبينا محمد</span>
-                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
                             </div>
                         </label>
                         <label class="flex items-center gap-3 p-3 bg-blush-superlight rounded-xl border border-roseGold-soft/20 hover:border-blush-medium transition-all cursor-pointer">
                             <input type="checkbox" id="dh_short_9" class="tasbeeh-checkbox task-check">
                             <div class="text-xs">
                                 <span class="font-bold block text-burgundy">يا مقلب القلوب ثبت قلبي...</span>
-                                <span class="text-[10px] text-gray-400">١٠0 مرة</span>
+                                <span class="text-[10px] text-gray-400">١٠٠ مرة</span>
                             </div>
                         </label>
                     </div>
@@ -777,7 +777,7 @@
                         </div>
                     </div>
 
-                    <!-- Reflection Fields under Daily Clips -->
+                    <!-- Reflection Fields under Clips -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         <!-- Clips Note -->
                         <div class="bg-roseGold-light/20 p-4 rounded-xl border border-roseGold-soft/40">
@@ -1106,29 +1106,42 @@
             });
         }
 
+        // 🌟 Safe binding logic prevents DOM crashes when elements are absent
         window.applyProgressToUI = function() {
             const data = window.currentProgress;
+            
+            const setVal = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.value = val;
+            };
+            const setTxt = (id, txt) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = txt;
+            };
+
             if (data.mood) {
                 const radio = document.querySelector(`input[name="mood"][value="${data.mood}"]`);
                 if (radio) radio.checked = true;
             }
+            
             document.querySelectorAll('.task-check').forEach(cb => {
                 cb.checked = (data.tasks && data.tasks[cb.id]) ? true : false;
             });
-            document.getElementById('heart_recharge_text').value = data.heartRechargeText || '';
-            document.getElementById('neutrality_notes').value = data.neutralityNotes || '';
-            document.getElementById('duaa_notes').value = data.duaaNotes || '';
-            document.getElementById('benefit_sharing_notes').value = data.benefitSharingNotes || '';
+            
+            setVal('heart_recharge_text', data.heartRechargeText || '');
+            setVal('neutrality_notes', data.neutralityNotes || '');
+            setVal('duaa_notes', data.duaaNotes || '');
+            setVal('benefit_sharing_notes', data.benefitSharingNotes || '');
             
             // Text fields safely loaded
-            document.getElementById('dhikr_companion_text').value = data.dhikrCompanionText || '';
-            document.getElementById('q_quran_progress').value = data.quranProgress || '';
-            document.getElementById('read_sawa_kawa_progress').value = data.sawaKawaProgress || '';
-            document.getElementById('sport_minimal_details').value = data.sportMinimalDetails || '';
-            document.getElementById('monajid_benefit_notes').value = data.monajidBenefitNotes || '';
-            document.getElementById('jazaa_segmented_notes').value = data.jazaaSegmentedNotes || '';
-            document.getElementById('shatibiya_progress_notes').value = data.shatibiyaProgressNotes || '';
-            document.getElementById('manahil_questions_notes').value = data.manahilQuestionsNotes || '';
+            setVal('dhikr_companion_text', data.dhikrCompanionText || '');
+            setVal('q_quran_progress', data.quranProgress || '');
+            setVal('read_sawa_kawa_progress', data.sawaKawaProgress || '');
+            setVal('sport_minimal_details', data.sportMinimalDetails || '');
+            setVal('monajid_benefit_notes', data.monajidBenefitNotes || '');
+            setVal('jazaa_segmented_notes', data.jazaaSegmentedNotes || '');
+            setVal('shatibiya_progress_notes', data.shatibiyaProgressNotes || '');
+            setVal('manahil_questions_notes', data.manahilQuestionsNotes || '');
 
             // Apply Memory Session radio buttons
             if (data.memorySession) {
@@ -1139,32 +1152,32 @@
             } else {
                 document.querySelectorAll('input[name="memory_session"]').forEach(radio => radio.checked = false);
             }
-            document.getElementById('memory_exercises_text').value = data.memoryExercisesText || '';
-            document.getElementById('memory_assignment_text').value = data.memoryAssignmentText || '';
-            document.getElementById('memory_feedback_text').value = data.memoryFeedbackText || '';
+            setVal('memory_exercises_text', data.memoryExercisesText || '');
+            setVal('memory_assignment_text', data.memoryAssignmentText || '');
+            setVal('memory_feedback_text', data.memoryFeedbackText || '');
 
             // Update summaries for Anas Control Room
-            document.getElementById('view_mood').innerText = data.mood || '-';
-            document.getElementById('view_neutrality').innerText = data.neutralityNotes || '-';
-            document.getElementById('view_duaa').innerText = data.duaaNotes || '-';
-            document.getElementById('view_benefit').innerText = data.benefitSharingNotes || '-';
+            setTxt('view_mood', data.mood || '-');
+            setTxt('view_neutrality', data.neutralityNotes || '-');
+            setTxt('view_duaa', data.duaaNotes || '-');
+            setTxt('view_benefit', data.benefitSharingNotes || '-');
 
             // Mirror Reflections to Admin Room
-            document.getElementById('mirror_monajid_notes').innerText = data.monajidBenefitNotes || 'لا يوجد تدوينات حالياً';
-            document.getElementById('mirror_jazaa_notes').innerText = data.jazaaSegmentedNotes || 'لا يوجد تدوينات حالياً';
-            document.getElementById('mirror_shatibiya_notes').innerText = data.shatibiyaProgressNotes || 'لا يوجد تدوينات حالياً';
-            document.getElementById('mirror_manahil_notes').innerText = data.manahilQuestionsNotes || 'لا يوجد تدوينات حالياً';
-            document.getElementById('mirror_dhikr_companion_text').innerText = data.dhikrCompanionText || 'لم يتم تحديد ذكر اليوم';
+            setTxt('mirror_monajid_notes', data.monajidBenefitNotes || 'لا يوجد تدوينات حالياً');
+            setTxt('mirror_jazaa_notes', data.jazaaSegmentedNotes || 'لا يوجد تدوينات حالياً');
+            setTxt('mirror_shatibiya_notes', data.shatibiyaProgressNotes || 'لا يوجد تدوينات حالياً');
+            setTxt('mirror_manahil_notes', data.manahilQuestionsNotes || 'لا يوجد تدوينات حالياً');
+            setTxt('mirror_dhikr_companion_text', data.dhikrCompanionText || 'لم يتم تحديد ذكر اليوم');
             
-            document.getElementById('mirror_quran_progress').innerText = data.quranProgress || 'لم يتم البدء اليوم';
-            document.getElementById('mirror_sawa_kawa_progress').innerText = data.sawaKawaProgress || 'لم يتم البدء اليوم';
-            document.getElementById('mirror_sport_details').innerText = data.sportMinimalDetails || 'لم يتم البدء اليوم';
+            setTxt('mirror_quran_progress', data.quranProgress || 'لم يتم البدء اليوم');
+            setTxt('mirror_sawa_kawa_progress', data.sawaKawaProgress || 'لم يتم البدء اليوم');
+            setTxt('mirror_sport_details', data.sportMinimalDetails || 'لم يتم البدء اليوم');
 
             // Memory Course Mirroring
-            document.getElementById('mirror_memory_session').innerText = data.memorySession || 'لم يتم حضور مجلس اليوم';
-            document.getElementById('mirror_memory_exercises').innerText = data.memoryExercisesText || 'لا يوجد تدوين للتمرينات';
-            document.getElementById('mirror_memory_assignment').innerText = data.memoryAssignmentText || 'لا يوجد تدوين للتكليف';
-            document.getElementById('mirror_memory_feedback').innerText = data.memoryFeedbackText || 'لا يوجد رأي مدون';
+            setTxt('mirror_memory_session', data.memorySession || 'لم يتم حضور مجلس اليوم');
+            setTxt('mirror_memory_exercises', data.memoryExercisesText || 'لا يوجد تدوين للتمرينات');
+            setTxt('mirror_memory_assignment', data.memoryAssignmentText || 'لا يوجد تدوين للتكليف');
+            setTxt('mirror_memory_feedback', data.memoryFeedbackText || 'لا يوجد رأي مدون');
 
             // Generate checklist mirror
             renderAdminChecklistMirror(data.tasks || {});
@@ -1174,36 +1187,41 @@
         window.triggerAutoSave = function() {
             updateTrackerVisuals();
             const syncSpinner = document.getElementById('syncSpinner');
-            syncSpinner.classList.add('fa-spin');
+            if (syncSpinner) syncSpinner.classList.add('fa-spin');
             if (window.autoSaveTimeout) clearTimeout(window.autoSaveTimeout);
 
             window.autoSaveTimeout = setTimeout(async () => {
                 const tasksObj = {};
                 document.querySelectorAll('.task-check').forEach(cb => { tasksObj[cb.id] = cb.checked; });
 
+                const getVal = (id) => {
+                    const el = document.getElementById(id);
+                    return el ? el.value : '';
+                };
+
                 const data = {
                     date: window.selectedDate,
                     mood: document.querySelector('input[name="mood"]:checked') ? document.querySelector('input[name="mood"]:checked').value : 'مطمئنة وهادئة 🕊️',
-                    heartRechargeText: document.getElementById('heart_recharge_text').value,
-                    neutralityNotes: document.getElementById('neutrality_notes').value,
-                    duaaNotes: document.getElementById('duaa_notes').value,
-                    benefitSharingNotes: document.getElementById('benefit_sharing_notes').value,
+                    heartRechargeText: getVal('heart_recharge_text'),
+                    neutralityNotes: getVal('neutrality_notes'),
+                    duaaNotes: getVal('duaa_notes'),
+                    benefitSharingNotes: getVal('benefit_sharing_notes'),
                     
                     // Saved Text Fields
-                    dhikrCompanionText: document.getElementById('dhikr_companion_text').value,
-                    quranProgress: document.getElementById('q_quran_progress').value,
-                    sawaKawaProgress: document.getElementById('read_sawa_kawa_progress').value,
-                    sportMinimalDetails: document.getElementById('sport_minimal_details').value,
-                    monajidBenefitNotes: document.getElementById('monajid_benefit_notes').value,
-                    jazaaSegmentedNotes: document.getElementById('jazaa_segmented_notes').value,
-                    shatibiyaProgressNotes: document.getElementById('shatibiya_progress_notes').value,
-                    manahilQuestionsNotes: document.getElementById('manahil_questions_notes').value,
+                    dhikrCompanionText: getVal('dhikr_companion_text'),
+                    quranProgress: getVal('q_quran_progress'),
+                    sawaKawaProgress: getVal('read_sawa_kawa_progress'),
+                    sportMinimalDetails: getVal('sport_minimal_details'),
+                    monajidBenefitNotes: getVal('monajid_benefit_notes'),
+                    jazaaSegmentedNotes: getVal('jazaa_segmented_notes'),
+                    shatibiyaProgressNotes: getVal('shatibiya_progress_notes'),
+                    manahilQuestionsNotes: getVal('manahil_questions_notes'),
 
                     // Saved Memory Fields
                     memorySession: document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : '',
-                    memoryExercisesText: document.getElementById('memory_exercises_text').value,
-                    memoryAssignmentText: document.getElementById('memory_assignment_text').value,
-                    memoryFeedbackText: document.getElementById('memory_feedback_text').value,
+                    memoryExercisesText: getVal('memory_exercises_text'),
+                    memoryAssignmentText: getVal('memory_assignment_text'),
+                    memoryFeedbackText: getVal('memory_feedback_text'),
                     
                     tasks: tasksObj
                 };
@@ -1216,7 +1234,7 @@
                     } catch (e) { console.error(e); }
                 }
 
-                syncSpinner.classList.remove('fa-spin');
+                if (syncSpinner) syncSpinner.classList.remove('fa-spin');
             }, 800);
         };
 
@@ -1243,6 +1261,144 @@
             document.querySelectorAll('input[name="memory_session"]').forEach(radio => radio.checked = false);
             window.triggerAutoSave();
         };
+
+        // 🛠️ دالة تصدير داتا النطاق الحر لملف نصي (.txt) بأعلى احترافية ونزاهة بيانية
+        window.downloadRawRangeData = async function() {
+            if (!window.db) { showToast("قاعدة البيانات السحابية غير متصلة!"); return; }
+            
+            const fromStr = document.getElementById('extractFromDate').value;
+            const toStr = document.getElementById('extractToDate').value;
+            
+            if (!fromStr || !toStr) {
+                showToast("من فضلك حدد تاريخ البداية والنهاية أولاً! 📅");
+                return;
+            }
+            
+            const fromDate = new Date(fromStr);
+            const toDate = new Date(toStr);
+            
+            if (fromDate > toDate) {
+                showToast("عفوًا! تاريخ البداية لا يمكن أن يكون بعد تاريخ النهاية.");
+                return;
+            }
+            
+            showToast("جاري جمع حزمة البيانات وحصاد المدونات... ⏳");
+            
+            const { getDoc } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js");
+            
+            let datesArray = [];
+            let currentDate = new Date(fromDate);
+            while (currentDate <= toDate) {
+                datesArray.push(currentDate.toISOString().slice(0, 10));
+                currentDate.setDate(currentDate.getDate() + 1);
+            }
+            
+            let extractedBundle = {};
+            const syncSpinner = document.getElementById('syncSpinner');
+            if(syncSpinner) syncSpinner.classList.add('fa-spin');
+            
+            for (let dateStr of datesArray) {
+                try {
+                    const docRef = doc(window.db, 'artifacts', window.appId, 'public', 'data', 'daily_progress', dateStr);
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        extractedBundle[dateStr] = docSnap.data();
+                    } else {
+                        extractedBundle[dateStr] = { empty: true, date: dateStr };
+                    }
+                } catch(e) {
+                    console.error("خطأ في جلب بيانات تاريخ: " + dateStr, e);
+                }
+            }
+            
+            if(syncSpinner) syncSpinner.classList.remove('fa-spin');
+            
+            const fileContent = JSON.stringify(extractedBundle, null, 2);
+            
+            const blob = new Blob([fileContent], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement("a");
+            downloadLink.href = url;
+            downloadLink.download = `Mihrab_Raw_Harvest_${fromStr}_to_${toStr}.txt`;
+            
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(url);
+            
+            showToast("تم سحب الفترة وتحميل ملف الـ .txt بنجاح! 🌸💾");
+        };
+
+        function renderAdminChecklistMirror(tasks) {
+            const mirrorContainer = document.getElementById('admin_full_checklist_mirror');
+            if(!mirrorContainer) return;
+
+            const schema = {
+                "الأوراد اليومية المباركة 🌿": [
+                    { id: 'init_intentions', label: 'استحضار نيات المحراب بالقلب 🎯' },
+                    { id: 'q_prayers', label: 'الصلوات الخمس في أوقاتها 🕌' },
+                    { id: 'q_fajr', label: 'ركعتا الفجر (السنة) 🌅' },
+                    { id: 'q_azkar_morning', label: 'أذكار الصباح كاملة ☀️' },
+                    { id: 'q_azkar_evening', label: 'أذكار المساء كاملة 🌆' },
+                    { id: 'q_duha', label: 'ركعتا الضحى المباركة 🌤️' },
+                    { id: 'q_sleep_mulk', label: 'أذكار النوم وسورة الملك والكافرون 🌌' },
+                    { id: 'q_quran', label: 'الورد القرآني والتدبر 📖' },
+                    { id: 'q_witr', label: 'ركعة الوتر ونور الليل 🌌' }
+                ],
+                "متابعة دورة الذاكرة 🧠": [
+                    { id: 'memory_interaction', label: 'التفاعل مع توجيهات المدرب 🎯' },
+                    { id: 'memory_assignment_done', label: 'تم الانتهاء من التكليف بالكامل ✅' }
+                ],
+                "القراءة والترويح وتقدير الجسد 🌸": [
+                    { id: 'read_sawa_kawa', label: 'دراسة كتاب صُوى وكُوى ومذاكرته 📚' },
+                    { id: 'sport_minimal', label: 'الرياضة اليومية (أقل القليل) 👟' },
+                    { id: 'halal_recreation', label: 'مكافأة الترويح الحلال 🎈' },
+                    { id: 'challenge_task', label: 'المهمة التشجيعية لليوم 🤝' }
+                ],
+                "النادي الروحي والخلوات 📿": [
+                    { id: 'dhikr_companion', label: 'الذكر الملازم طوال اليوم 🌟' },
+                    { id: 'heart_recharge_done', label: 'جلسة شحن القلب وتدبر النعم ❤️🔋' },
+                    { id: 'neutrality_done', label: 'خلوة المحايدة الواعية 🧘‍♀️' },
+                    { id: 'duaa_done', label: 'ورد الدعاء والنجوى بالعامية 🤲' }
+                ],
+                "الأذكار القصيرة والتهليلات (١٠٠ مرة) ✨": [
+                    { id: 'dh_short_1', label: 'سبحان الله' }, { id: 'dh_short_2', label: 'الحمد لله' },
+                    { id: 'dh_short_3', label: 'لا إله إلا الله' }, { id: 'dh_short_4', label: 'الله أكبر' },
+                    { id: 'dh_short_5', label: 'لا حول ولا قوة إلا بالله' }, { id: 'dh_short_6', label: 'سبحان الله وبحمده' },
+                    { id: 'dh_short_7', label: 'أستغفر الله وأتوب إليه' }, { id: 'dh_short_8', label: 'اللهم صل وسلم على محمد' },
+                    { id: 'dh_short_9', label: 'يا مقلب القلوب ثبت قلبي' }
+                ],
+                "طلب العلم والورد المسموع 🧠": [
+                    { id: 'sc_ward', label: 'طاقة ورد 🌹' },
+                    { id: 'sc_ashza', label: 'أشذاء وأنداء للكملي 🌿' },
+                    { id: 'sc_monajid', label: '٤ مقاطع للشيخ المنجد 🌍' },
+                    { id: 'sc_jazaa_segmented', label: 'الجزاء التربوي (مقطع يومي مجزأ) 🌱' },
+                    { id: 'metn_shatibiya', label: 'حفظ الشاطبية 📜' },
+                    { id: 'book_manahil', label: 'مذاكرة أعذب المناهل 📖' },
+                    { id: 'metn_others', label: 'مراجعة المتون الأخرى 📐' }
+                ]
+            };
+
+            let html = "";
+            for (const [categoryName, items] of Object.entries(schema)) {
+                html += `
+                <div class="bg-gray-50/70 p-4 rounded-2xl border border-gray-100 space-y-2">
+                    <span class="text-xs font-bold text-burgundy block mb-2 border-b pb-1 border-roseGold-soft">${categoryName}</span>
+                    <div class="space-y-1.5">`;
+                
+                items.forEach(item => {
+                    const done = tasks[item.id] === true;
+                    html += `
+                    <div class="flex items-center justify-between p-1 rounded transition-all ${done ? 'bg-green-50/50 font-medium' : 'opacity-50'}">
+                        <span class="text-[11px] ${done ? 'text-green-800' : 'text-gray-500'}">${item.label}</span>
+                        <span>${done ? '<i class="fa-solid fa-heart text-blush-medium text-xs"></i>' : '<i class="fa-regular fa-circle text-[10px] text-gray-300"></i>'}</span>
+                    </div>`;
+                });
+
+                html += `</div></div>`;
+            }
+            mirrorContainer.innerHTML = html;
+        }
     </script>
 
     <!-- UI Scripts -->
@@ -1267,26 +1423,45 @@
             }, 3000);
         }
 
+        // 🌟 Robust recalculation of progress to handle checkboxes and radio buttons elegantly
         function updateTrackerVisuals() {
             const checkboxes = document.querySelectorAll('.task-check');
             let visibleCheckboxes = Array.from(checkboxes);
-            if (document.getElementById('anasChallengeBox').classList.contains('hidden')) {
+            
+            // Filter challenge task if it's hidden
+            const challengeBox = document.getElementById('anasChallengeBox');
+            if (challengeBox && challengeBox.classList.contains('hidden')) {
                 visibleCheckboxes = visibleCheckboxes.filter(cb => cb.id !== 'challenge_task');
             }
-            const checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
-            const percentage = visibleCheckboxes.length > 0 ? Math.round((checkedCount / visibleCheckboxes.length) * 100) : 0;
-            document.getElementById('progressBar').style.width = percentage + '%';
-            document.getElementById('progressText').innerText = percentage + '%';
+
+            let checkedCount = visibleCheckboxes.filter(cb => cb.checked).length;
+            let totalCount = visibleCheckboxes.length;
+
+            // Handle Memory course radios as 1 combined daily task ( Morning or Evening )
+            const radioMorning = document.getElementById('memory_session_morning');
+            const radioEvening = document.getElementById('memory_session_evening');
+            if (radioMorning && radioEvening) {
+                totalCount += 1; // It counts as exactly 1 task
+                if (radioMorning.checked || radioEvening.checked) {
+                    checkedCount += 1;
+                }
+            }
+
+            const percentage = totalCount > 0 ? Math.round((checkedCount / totalCount) * 100) : 0;
+            
+            const pBar = document.getElementById('progressBar');
+            const pText = document.getElementById('progressText');
+            if (pBar) pBar.style.width = percentage + '%';
+            if (pText) pText.innerText = percentage + '%';
         }
 
-        // 🌟 دالة تفاعلية لإطلاق زخات نفحات التكريم من فوق لتحت عند طلبها (تيجان، نجوم، مصاحف، أوراد)
         function triggerEtherealSoundAndPetals() {
-            // تشغيل الصوت الصاعد الملائكي
+            // Synthesis sound
             try {
                 const AudioContext = window.AudioContext || window.webkitAudioContext;
                 if (AudioContext) {
                     const ctx = new AudioContext();
-                    const melody = [523.25, 659.25, 783.99, 987.77, 1046.50]; // نوتات صاعدة
+                    const melody = [523.25, 659.25, 783.99, 987.77, 1046.50]; // ascending tones
                     melody.forEach((freq, index) => {
                         const time = ctx.currentTime + (index * 0.20);
                         const osc = ctx.createOscillator();
@@ -1304,7 +1479,7 @@
                 }
             } catch (e) { console.log(e); }
 
-            // نثر البتلات الاحتفالية التكريمية
+            // Trigger beautiful petals drop
             const container = document.getElementById('petal-container');
             if (!container) return;
             const celebratoryItems = ['👑', '✨', '📖', '🌸', '🌟', '🌹', '💎', '♥'];
@@ -1370,7 +1545,6 @@
             if (role === 'anas') {
                 if (window.applyProgressToUI) window.applyProgressToUI();
                 
-                // تلقيم تلقائي بتواريخ آخر أسبوع لتوفير المجهود
                 const fromInput = document.getElementById('extractFromDate');
                 const toInput = document.getElementById('extractToDate');
                 if (fromInput && toInput && !toInput.value) {
@@ -1389,27 +1563,32 @@
             const progress = document.getElementById('progressText').innerText;
             const selectedSession = document.querySelector('input[name="memory_session"]:checked') ? document.querySelector('input[name="memory_session"]:checked').value : 'لم يتم حضور مجلس اليوم';
             
+            const getVal = (id) => {
+                const el = document.getElementById(id);
+                return el ? el.value : 'لم يتم التدوين';
+            };
+
             let report = `🌸✨ *تقرير محراب البهجة والارتِقاء المَعرفي الكامِل* ✨🌸\n📅 *يوم:* ${dateStr}\n🕊 *نبض قلبي اليوم:* ${mood}\n📈 *مؤشر الإنجاز الكلي اليومي:* ${progress}\n\n`;
             
             report += `🌿 *كشف الملاحظات والتدوينات الروحية والعلمية:*\n`;
-            report += `  • *الذكر الملازم اليومي المختار:* ${document.getElementById('dhikr_companion_text').value || 'لم يتم التدوين'}\n`;
-            report += `  • *الورد القرآني المنجز:* ${document.getElementById('q_quran_progress').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *كتاب صُوى وكُوى والفوائد:* ${document.getElementById('read_sawa_kawa_progress').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مستودع النعم الثلاث:* ${document.getElementById('heart_recharge_text').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مذكرات خلوة المحايدة:* ${document.getElementById('neutrality_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *بث النجوى والدعاء:* ${document.getElementById('duaa_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *الرياضة والحركة:* ${document.getElementById('sport_minimal_details').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *فوائد المقتطفات (المنجد والمشايخ):* ${document.getElementById('monajid_benefit_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مستفاد الجزاء التربوي (المجزأ):* ${document.getElementById('jazaa_segmented_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مستوى حفظ ومراجعة الشاطبية:* ${document.getElementById('shatibiya_progress_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *مذاكرة وتساؤلات أعذب المناهل:* ${document.getElementById('manahil_questions_notes').value || 'لم يتم التدوين اليوم'}\n`;
-            report += `  • *الفوائد والأسئلة العامة:* ${document.getElementById('benefit_sharing_notes').value || 'لا يوجد ملحوظات اليوم'}\n\n`;
+            report += `  • *الذكر الملازم اليومي المختار:* ${getVal('dhikr_companion_text')}\n`;
+            report += `  • *الورد القرآني المنجز:* ${getVal('q_quran_progress')}\n`;
+            report += `  • *كتاب صُوى وكُوى والفوائد:* ${getVal('read_sawa_kawa_progress')}\n`;
+            report += `  • *مستودع النعم الثلاث:* ${getVal('heart_recharge_text')}\n`;
+            report += `  • *مذكرات خلوة المحايدة:* ${getVal('neutrality_notes')}\n`;
+            report += `  • *بث النجوى والدعاء:* ${getVal('duaa_notes')}\n`;
+            report += `  • *الرياضة والحركة:* ${getVal('sport_minimal_details')}\n`;
+            report += `  • *فوائد المقتطفات (المنجد والمشايخ):* ${getVal('monajid_benefit_notes')}\n`;
+            report += `  • *مستفاد الجزاء التربوي (المجزأ):* ${getVal('jazaa_segmented_notes')}\n`;
+            report += `  • *مستوى حفظ ومراجعة الشاطبية:* ${getVal('shatibiya_progress_notes')}\n`;
+            report += `  • *مذاكرة وتساؤلات أعذب المناهل:* ${getVal('manahil_questions_notes')}\n`;
+            report += `  • *الفوائد والأسئلة العامة:* ${getVal('benefit_sharing_notes')}\n\n`;
 
             report += `🧠 *جناح دورة تنشيط الذاكرة:* \n`;
             report += `  • *حضور المجلس:* ${selectedSession}\n`;
-            report += `  • *تمرينات الحلقة اليومية:* ${document.getElementById('memory_exercises_text').value || 'لا يوجد تمرينات مدونة'}\n`;
-            report += `  • *تكليف الحلقة والواجب:* ${document.getElementById('memory_assignment_text').value || 'لا يوجد تكليف مدون'}\n`;
-            report += `  • *الرأي والتقدم الملحوظ في الحفظ:* ${document.getElementById('memory_feedback_text').value || 'لا يوجد ملحوظات'}\n\n`;
+            report += `  • *تمرينات الحلقة اليومية:* ${getVal('memory_exercises_text')}\n`;
+            report += `  • *تكليف الحلقة والواجب:* ${getVal('memory_assignment_text')}\n`;
+            report += `  • *الرأي والتقدم الملحوظ في الحفظ:* ${getVal('memory_feedback_text')}\n\n`;
 
             let checkedItems = [];
             const schemaNames = {
@@ -1418,8 +1597,7 @@
                 'challenge_task': 'المهمة التشجيعية لليوم🤝', 'dhikr_companion': 'الذكر الملازم طوال اليوم🌟', 'heart_recharge_done': 'جلسة شحن القلب وتدبر النعم❤️', 'neutrality_done': 'خلوة المحايدة النفسية🧘‍♀️', 'duaa_done': 'بث النجوى والدعاء المستجاب🤲',
                 'sc_ward': 'سلسلة طاقة ورد🌹', 'sc_ashza': 'أشذاء وأنداء للكملي🌿', 'sc_monajid': '٤ مقاطع للشيخ المنجد🌍', 'sc_jazaa_segmented': 'مقطع الجزاء التربوي المجزأ🌱',
                 'metn_shatibiya': 'حفظ الشاطبية واستظهارها📜', 'book_manahil': 'مذاكرة أعذب المناهل وتدبره📐', 'metn_others': 'مراجعة المتون الأخرى📐',
-                'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅',
-                'dh_short_1': 'تسبيح', 'dh_short_2': 'تحميد', 'dh_short_3': 'تهليل', 'dh_short_4': 'تكبير', 'dh_short_5': 'حوقلة', 'dh_short_6': 'سبحان الله وبحمده', 'dh_short_7': 'استغفار', 'dh_short_8': 'صلاة على النبي', 'dh_short_9': 'يا مقلب القلوب ثبت قلبي'
+                'memory_interaction': 'تم التفاعل مع توجيهات المدرب بالذاكرة🎯', 'memory_assignment_done': 'تم إنجاز التكليف للذاكرة بالكامل✅'
             };
 
             document.querySelectorAll('.task-check').forEach(cb => {
